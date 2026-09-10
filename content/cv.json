@@ -1,0 +1,23 @@
+{
+  "page_intro": "Academic appointments, education, publications, grants, fellowships, and professional activities.",
+  "last_updated": "September 2026",
+  "pdf": "",
+  "appointments": [
+    {
+      "position": "Assistant Professor of History",
+      "institution": "University of Warsaw",
+      "period": ""
+    }
+  ],
+  "education": [],
+  "research_areas": [
+    "Cold War",
+    "Cultural diplomacy",
+    "Sovietology",
+    "Poland",
+    "Ukraine",
+    "Émigré intellectual history",
+    "Academic exchange"
+  ],
+  "note": "Upload your current CV PDF through the admin panel. You can also add selected appointments and education entries below."
+}

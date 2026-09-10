@@ -1,0 +1,37 @@
+{
+  "page_intro": "I work at the intersection of diplomatic, intellectual, and cultural history, with a focus on the institutions and people who mediated the Cold War divide.",
+  "items": [
+    {
+      "id": "cultural-diplomacy",
+      "number": "01",
+      "title": "Cultural Diplomacy & Academic Exchange",
+      "summary": "Fulbright, public diplomacy, academic mobility, information policy, and the institutions that connected the United States with East-Central Europe.",
+      "body": "My work on cultural diplomacy asks what happens between official policy and lived exchange. Programs such as Fulbright were designed within larger structures of American foreign policy, but their consequences depended on universities, foundations, cultural institutions, administrators, scholars, and students who gave those programs purposes of their own.\n\nI am interested in the overlap — and friction — between information policy, persuasion, public diplomacy, academic autonomy, and scholarly mobility. Poland provides a particularly revealing case because exchange continued across dramatic changes in political regime and international order.",
+      "related": "Fulbright · public diplomacy · Voice of America · academic mobility · Polish-American relations."
+    },
+    {
+      "id": "east-central-europe",
+      "number": "02",
+      "title": "Inventing East-Central Europe",
+      "summary": "The scholars, émigrés, universities, journals, and Cold War institutions that turned East-Central Europe into an American field of knowledge.",
+      "body": "My current book project examines the rise and fall of East-Central Europe as an intellectual concept in Cold War America. Rather than treating the region as a self-evident geography, I reconstruct the institutional and personal networks that made it legible as a distinct historical and political space.\n\nThe story moves through émigré scholarship, area studies, Columbia University, the National Committee for a Free Europe, learned societies, journals, and debates over the eastern boundaries of Europe. It also asks how Ukrainians and other groups initially placed beyond the standard map of “Central Europe” entered — and altered — the field.",
+      "related": "Oscar Halecki · Otakar Odložilík · Piotr S. Wandycz · Ivan Lysiak-Rudnytsky."
+    },
+    {
+      "id": "giedroyc-brzezinski",
+      "number": "03",
+      "title": "Giedroyc, Brzezinski & the Politics of Eastern Europe",
+      "summary": "Networks linking Kultura, American Sovietology, Polish émigré political thought, and changing visions of Eastern Europe.",
+      "body": "A third strand of my research follows the traffic of ideas between the Paris Kultura, American Sovietology, universities, foundations, and policy circles. The correspondence of Jerzy Giedroyc and Zbigniew Brzezinski offers one particularly rich vantage point onto this world.\n\nI am interested less in influence understood as a one-way transmission than in the process by which political concepts were tested, translated, adapted, and circulated across institutions. This includes competing views of Russia, Ukraine, the Soviet multinational state, détente, and the postwar order in Europe.",
+      "related": "Kultura · Sovietology · détente · Brzezinski · Giedroyc · intellectual networks."
+    },
+    {
+      "id": "ukraine",
+      "number": "04",
+      "title": "Ukraine, Sovereignty & Émigré Thought",
+      "summary": "Ukrainian émigré intellectual history, Soviet federalism, state-making, and the emergence of Ukrainian and East-Central European studies in North America.",
+      "body": "My work on Ukraine connects intellectual history with the history of federalism, sovereignty, and state-making. I examine how émigré scholars and political thinkers interpreted the Ukrainian SSR, the constitutional architecture of the Soviet Union, and the possibility that republican institutions might acquire political meaning beyond Moscow's intentions.\n\nA related project reconstructs the Ukrainian foundations of Central-European and Soviet studies in Cold War Canada, following scholars who built new institutions while rethinking the intellectual geography of Europe and the Soviet Union from what initially appeared to be two peripheries: Ukraine and Canada.",
+      "related": "Soviet federalism · sovereignty · Ukrainian studies · Canada · émigré scholarship."
+    }
+  ]
+}

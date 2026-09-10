@@ -1,0 +1,179 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: simple
+
+collections:
+  - label: "Profile & homepage"
+    name: "site"
+    files:
+      - label: "Profile & homepage"
+        name: "site"
+        file: "content/site.json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Academic role", name: "role", widget: "string" }
+          - { label: "Institution", name: "institution", widget: "string" }
+          - { label: "Small line above name", name: "eyebrow", widget: "string" }
+          - { label: "Main tagline", name: "tagline", widget: "string" }
+          - { label: "Homepage introduction", name: "intro", widget: "text" }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "ORCID URL", name: "orcid_url", widget: "string", required: false }
+          - { label: "Google Scholar URL", name: "scholar_url", widget: "string", required: false }
+          - { label: "Other profile URL", name: "profile_url", widget: "string", required: false }
+          - { label: "Homepage portrait", name: "portrait", widget: "image", required: false }
+          - label: "Research-profile keywords"
+            name: "theme_tags"
+            widget: "list"
+            field: { label: "Keyword", name: "keyword", widget: "string" }
+          - { label: "Featured-book label", name: "home_feature_label", widget: "string" }
+          - { label: "Research heading", name: "home_research_heading", widget: "string" }
+          - { label: "Research intro", name: "home_research_intro", widget: "text" }
+          - { label: "Selected-publications heading", name: "publications_heading", widget: "string" }
+          - { label: "Selected-publications intro", name: "publications_intro", widget: "text" }
+
+  - label: "Books"
+    name: "books"
+    files:
+      - label: "Books"
+        name: "books"
+        file: "content/books.json"
+        fields:
+          - { label: "Page introduction", name: "page_intro", widget: "text" }
+          - label: "Books and editions"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.status}} — {{fields.title}}"
+            fields:
+              - { label: "ID / anchor", name: "id", widget: "string", hint: "Lowercase, no spaces, e.g. fulbright" }
+              - { label: "Status", name: "status", widget: "string" }
+              - { label: "Featured on homepage", name: "featured", widget: "boolean", default: false }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+              - { label: "Publisher", name: "publisher", widget: "string", required: false }
+              - { label: "Year", name: "year", widget: "string", required: false }
+              - { label: "Publication note", name: "publication_note", widget: "string", required: false }
+              - { label: "Cover", name: "cover", widget: "image", required: false }
+              - { label: "Publisher / project URL", name: "external_url", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - label: "Research projects"
+    name: "research"
+    files:
+      - label: "Research projects"
+        name: "research"
+        file: "content/research.json"
+        fields:
+          - { label: "Page introduction", name: "page_intro", widget: "text" }
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.number}} — {{fields.title}}"
+            fields:
+              - { label: "ID / anchor", name: "id", widget: "string" }
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Short homepage summary", name: "summary", widget: "text" }
+              - { label: "Full description", name: "body", widget: "text" }
+              - { label: "Related themes / figures", name: "related", widget: "string", required: false }
+
+  - label: "Publications"
+    name: "publications"
+    files:
+      - label: "Publications"
+        name: "publications"
+        file: "content/publications.json"
+        fields:
+          - { label: "Page introduction", name: "page_intro", widget: "text" }
+          - label: "Publication list"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.year}} — {{fields.title}}"
+            fields:
+              - { label: "Section / type", name: "type", widget: "select", options: ["Books & editions", "Peer-reviewed articles", "Book chapters", "Review essays & reviews", "Public history & essays", "Work in progress", "Other"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Year", name: "year", widget: "string", required: false }
+              - { label: "Citation / journal / publisher", name: "meta", widget: "text", required: false }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                required: false
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "External URL", name: "url", widget: "string", required: false }
+              - { label: "PDF", name: "pdf", widget: "file", required: false }
+              - { label: "DOI (number or URL)", name: "doi", widget: "string", required: false }
+              - { label: "Show on homepage", name: "featured", widget: "boolean", default: false }
+
+  - label: "Talks & Media"
+    name: "talks"
+    files:
+      - label: "Talks & Media"
+        name: "talks"
+        file: "content/talks.json"
+        fields:
+          - { label: "Page introduction", name: "page_intro", widget: "text" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.date}} — {{fields.title}}"
+            fields:
+              - { label: "Type", name: "type", widget: "select", options: ["Lecture", "Conference paper", "Seminar", "Podcast", "Interview", "Media", "Public history", "Other"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Venue / outlet", name: "venue", widget: "string", required: false }
+              - { label: "Date", name: "date", widget: "string", required: false, hint: "e.g. 8 July 2026" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Event / media URL", name: "url", widget: "string", required: false }
+
+  - label: "About"
+    name: "about"
+    files:
+      - label: "About"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - { label: "Page introduction", name: "page_intro", widget: "text" }
+          - label: "Biography paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Short bio", name: "short_bio", widget: "text" }
+          - { label: "For organizers note", name: "organizer_note", widget: "text" }
+          - { label: "About-page portrait", name: "portrait", widget: "image", required: false }
+
+  - label: "CV"
+    name: "cv"
+    files:
+      - label: "CV"
+        name: "cv"
+        file: "content/cv.json"
+        fields:
+          - { label: "Page introduction", name: "page_intro", widget: "text" }
+          - { label: "Last updated", name: "last_updated", widget: "string", required: false }
+          - { label: "CV PDF", name: "pdf", widget: "file", required: false }
+          - { label: "Editor note", name: "note", widget: "text", required: false }
+          - label: "Academic appointments"
+            name: "appointments"
+            widget: "list"
+            required: false
+            summary: "{{fields.position}} — {{fields.institution}}"
+            fields:
+              - { label: "Position", name: "position", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+              - { label: "Period", name: "period", widget: "string", required: false }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            required: false
+            summary: "{{fields.degree}} — {{fields.institution}}"
+            fields:
+              - { label: "Degree", name: "degree", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+              - { label: "Year / period", name: "year", widget: "string", required: false }
+          - label: "Research areas"
+            name: "research_areas"
+            widget: "list"
+            field: { label: "Area", name: "area", widget: "string" }

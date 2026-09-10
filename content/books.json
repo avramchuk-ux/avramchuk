@@ -1,0 +1,57 @@
+{
+  "page_intro": "Monographs and major editorial projects on cultural diplomacy, East-Central Europe, and Cold War intellectual history.",
+  "items": [
+    {
+      "id": "fulbright",
+      "status": "Forthcoming",
+      "featured": true,
+      "title": "A History of the Fulbright Program in Poland, 1945–2025",
+      "subtitle": "To Build a Republic of Spirit",
+      "publisher": "Manchester University Press",
+      "year": "2026",
+      "publication_note": "Publication planned for November 2026",
+      "cover": "",
+      "external_url": "",
+      "description": "This book reconstructs the history of the Fulbright Program in Poland from the postwar settlement through state socialism and the democratic transition to the present. It treats academic exchange not simply as a diplomatic program, but as a site where foreign-policy objectives, institutional ambitions, scholarly careers, and individual encounters intersected.\n\nIts larger question is how repeated exchange helped shape Polish understandings of the United States and American understandings of Poland — and how those relationships outlived the political conditions in which they were created."
+    },
+    {
+      "id": "republic-spirit-pl",
+      "status": "Published",
+      "featured": false,
+      "title": "Budując Republikę Ducha",
+      "subtitle": "",
+      "publisher": "",
+      "year": "2024",
+      "publication_note": "Polish-language monograph",
+      "cover": "",
+      "external_url": "",
+      "description": "The Polish-language study from which the English Fulbright history developed."
+    },
+    {
+      "id": "east-central-europe",
+      "status": "Book in progress",
+      "featured": false,
+      "title": "East-Central Europe in Cold War America",
+      "subtitle": "The Rise and Fall of an Intellectual Concept",
+      "publisher": "",
+      "year": "",
+      "publication_note": "",
+      "cover": "",
+      "external_url": "",
+      "description": "This book traces how “East-Central Europe” became an intellectual and political category in the United States during the Cold War. It follows scholars, émigrés, universities, journals, and Cold War institutions from interwar precedents to the late twentieth century, asking how a once peripheral regional concept became an established field of knowledge — and why its boundaries eventually moved eastward.\n\nKey figures and institutions include Oscar Halecki, Otakar Odložilík, Piotr S. Wandycz, Columbia University, the National Committee for a Free Europe, and the institutional world that eventually coalesced around Slavic and East European studies."
+    },
+    {
+      "id": "giedroyc-brzezinski",
+      "status": "Source edition in preparation",
+      "featured": false,
+      "title": "Jerzy Giedroyc – Zbigniew Brzezinski. Correspondence",
+      "subtitle": "",
+      "publisher": "",
+      "year": "",
+      "publication_note": "",
+      "cover": "",
+      "external_url": "",
+      "description": "A documentary edition of the correspondence between Jerzy Giedroyc and Zbigniew Brzezinski, covering more than four decades of discussion about Poland, Ukraine, Russia, the Soviet Union, and American strategy toward Eastern Europe.\n\nThe project treats their correspondence not only as a record of two prominent intellectuals, but as an entry point into the networks connecting the Paris Kultura, American Sovietology, foundations, universities, and policy circles."
+    }
+  ]
+}

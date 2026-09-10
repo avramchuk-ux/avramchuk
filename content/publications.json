@@ -1,0 +1,124 @@
+{
+  "page_intro": "Books, source editions, articles, chapters, and review essays.",
+  "items": [
+    {
+      "type": "Books & editions",
+      "title": "A History of the Fulbright Program in Poland, 1945–2025: To Build a Republic of Spirit",
+      "year": "2026",
+      "meta": "Manchester University Press, forthcoming 2026.",
+      "tags": [
+        "Cold War",
+        "Poland",
+        "Fulbright"
+      ],
+      "url": "",
+      "pdf": "",
+      "doi": "",
+      "featured": true
+    },
+    {
+      "type": "Books & editions",
+      "title": "Budując Republikę Ducha",
+      "year": "2024",
+      "meta": "Polish-language monograph, 2024.",
+      "tags": [
+        "Poland",
+        "Fulbright"
+      ],
+      "url": "",
+      "pdf": "",
+      "doi": "",
+      "featured": true
+    },
+    {
+      "type": "Books & editions",
+      "title": "Jerzy Giedroyc – Zbigniew Brzezinski. Correspondence",
+      "year": "",
+      "meta": "Source edition in preparation.",
+      "tags": [
+        "Cold War",
+        "Poland",
+        "Ukraine",
+        "Sovietology"
+      ],
+      "url": "",
+      "pdf": "",
+      "doi": "",
+      "featured": false
+    },
+    {
+      "type": "Work in progress",
+      "title": "East-Central Europe in Cold War America: The Rise and Fall of an Intellectual Concept",
+      "year": "",
+      "meta": "Book project in progress.",
+      "tags": [
+        "Cold War",
+        "East-Central Europe",
+        "Sovietology"
+      ],
+      "url": "",
+      "pdf": "",
+      "doi": "",
+      "featured": true
+    },
+    {
+      "type": "Work in progress",
+      "title": "Peripheral No More: Exile Intellectuals and the Ukrainian Foundations of Central-European Studies in Cold War Canada, 1945–1976",
+      "year": "",
+      "meta": "Article in progress.",
+      "tags": [
+        "Cold War",
+        "Ukraine",
+        "East-Central Europe"
+      ],
+      "url": "",
+      "pdf": "",
+      "doi": "",
+      "featured": true
+    },
+    {
+      "type": "Work in progress",
+      "title": "Making 1945 a Turning Point: Soviet Federalism and Ukrainian Émigré Political Thought",
+      "year": "",
+      "meta": "Article in progress.",
+      "tags": [
+        "Cold War",
+        "Ukraine",
+        "Sovietology"
+      ],
+      "url": "",
+      "pdf": "",
+      "doi": "",
+      "featured": false
+    },
+    {
+      "type": "Work in progress",
+      "title": "Who Owned Sovereignty? Republican Uncivil Society and State-Making in Soviet Ukraine and Belarus, 1965–1991",
+      "year": "",
+      "meta": "Co-authored article in progress.",
+      "tags": [
+        "Ukraine",
+        "Sovietology"
+      ],
+      "url": "",
+      "pdf": "",
+      "doi": "",
+      "featured": false
+    },
+    {
+      "type": "Work in progress",
+      "title": "Brzezinski in the USSR, October–November 1989",
+      "year": "",
+      "meta": "Documentary article in preparation.",
+      "tags": [
+        "Cold War",
+        "Poland",
+        "Sovietology"
+      ],
+      "url": "",
+      "pdf": "",
+      "doi": "",
+      "featured": false
+    }
+  ]
+}

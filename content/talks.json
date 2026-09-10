@@ -1,0 +1,29 @@
+{
+  "page_intro": "Selected lectures, conference presentations, public history, podcasts, interviews, and media contributions.",
+  "items": [
+    {
+      "type": "Selected lecture",
+      "title": "Cold War cultural diplomacy and the politics of academic exchange",
+      "venue": "Add venue",
+      "date": "",
+      "description": "A public-facing presentation of the Fulbright project and its implications for understanding Polish-American relations.",
+      "url": ""
+    },
+    {
+      "type": "Selected lecture",
+      "title": "East-Central Europe in Cold War America",
+      "venue": "Add venue",
+      "date": "",
+      "description": "How émigré scholars and American institutions turned a contested geographical concept into a field of knowledge.",
+      "url": ""
+    },
+    {
+      "type": "Selected lecture",
+      "title": "Giedroyc, Brzezinski, and the political imagination of Eastern Europe",
+      "venue": "Add venue",
+      "date": "",
+      "description": "On intellectual exchange between Kultura, American Sovietology, and foreign-policy circles.",
+      "url": ""
+    }
+  ]
+}
