@@ -1,123 +1,286 @@
 {
-  "page_intro": "Books, source editions, articles, chapters, and review essays.",
+  "page_intro": "Academic books and editions, articles, book chapters, reviews, and work in progress.",
   "items": [
     {
       "type": "Books & editions",
       "title": "A History of the Fulbright Program in Poland, 1945–2025: To Build a Republic of Spirit",
       "year": "2026",
-      "meta": "Manchester University Press, forthcoming 2026.",
+      "meta": "Manchester: Manchester University Press, forthcoming November 2026.",
+      "image": "/assets/uploads/9781526189998.jpg",
       "tags": [
         "Cold War",
-        "Poland",
-        "Fulbright"
+        "Cultural diplomacy",
+        "Fulbright",
+        "Poland"
       ],
-      "url": "",
+      "url": "https://manchesteruniversitypress.co.uk/9781526189998/",
+      "link_label": "MANCHESTER",
       "pdf": "",
       "doi": "",
-      "featured": true
+      "bibtex": "",
+      "featured": false
     },
     {
       "type": "Books & editions",
-      "title": "Budując Republikę Ducha",
+      "title": "Budując Republikę Ducha. Historia Programu Fulbrighta w Polsce w latach 1945–2020",
       "year": "2024",
-      "meta": "Polish-language monograph, 2024.",
+      "meta": "Warsaw: Wydawnictwo Naukowe PWN, 2024.",
+      "image": "",
       "tags": [
-        "Poland",
-        "Fulbright"
+        "Cultural diplomacy",
+        "Fulbright",
+        "Poland"
       ],
-      "url": "",
+      "url": "https://ksiegarnia.pwn.pl/Budujac-Republike-Ducha.%2C1070317688%2Cp.html",
+      "link_label": "PWN",
       "pdf": "",
       "doi": "",
+      "bibtex": "",
+      "featured": false
+    },
+    {
+      "type": "Books & editions",
+      "title": "Rzeczpospolita uczonych. Powstanie studiów ukraińskich i polsko-ukraiński dialog historyków w Stanach Zjednoczonych, 1939–1991",
+      "year": "2024",
+      "meta": "Warsaw: Studium Europy Wschodniej Uniwersytetu Warszawskiego, 2024.",
+      "image": "",
+      "tags": [
+        "Ukraine",
+        "Poland",
+        "United States",
+        "Émigré intellectuals",
+        "Ukrainian studies"
+      ],
+      "url": "https://historia.uw.edu.pl/publication/rzeczpospolita-uczonych-powstanie-studiow-ukrainskich-i-polsko-ukrainski-dialog-historykow-w-stanach-zjednoczonych-1939-1991/",
+      "link_label": "UW",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
       "featured": true
     },
     {
       "type": "Books & editions",
-      "title": "Jerzy Giedroyc – Zbigniew Brzezinski. Correspondence",
-      "year": "",
-      "meta": "Source edition in preparation.",
+      "title": "Paradoks istnienia. Korespondencja Michała Łesiowa i Romana Szporluka 1955–2016",
+      "year": "2026",
+      "meta": "Edited by Oleksandr Avramchuk and Ola Hnatiuk. Lublin: Institute of Central Europe, 2026.",
+      "image": "",
       "tags": [
-        "Cold War",
-        "Poland",
-        "Ukraine",
-        "Sovietology"
+        "Polish-Ukrainian relations",
+        "Intellectual history",
+        "Correspondence"
       ],
       "url": "",
+      "link_label": "",
       "pdf": "",
       "doi": "",
-      "featured": false
+      "bibtex": "",
+      "featured": true
     },
     {
-      "type": "Work in progress",
-      "title": "East-Central Europe in Cold War America: The Rise and Fall of an Intellectual Concept",
-      "year": "",
-      "meta": "Book project in progress.",
+      "type": "Peer-reviewed articles",
+      "title": "The decolonisation trap and the quest to reclaim a “kidnapped” Europe",
+      "year": "2025",
+      "meta": "Yearbook of the Institute of East-Central Europe 4/2025, pp. 123–148.",
+      "image": "",
       "tags": [
-        "Cold War",
         "East-Central Europe",
-        "Sovietology"
+        "Decolonisation",
+        "Intellectual history"
       ],
       "url": "",
+      "link_label": "",
       "pdf": "",
       "doi": "",
+      "bibtex": "",
       "featured": true
     },
     {
-      "type": "Work in progress",
-      "title": "Peripheral No More: Exile Intellectuals and the Ukrainian Foundations of Central-European Studies in Cold War Canada, 1945–1976",
-      "year": "",
-      "meta": "Article in progress.",
-      "tags": [
-        "Cold War",
-        "Ukraine",
-        "East-Central Europe"
-      ],
-      "url": "",
-      "pdf": "",
-      "doi": "",
-      "featured": true
-    },
-    {
-      "type": "Work in progress",
-      "title": "Making 1945 a Turning Point: Soviet Federalism and Ukrainian Émigré Political Thought",
-      "year": "",
-      "meta": "Article in progress.",
-      "tags": [
-        "Cold War",
-        "Ukraine",
-        "Sovietology"
-      ],
-      "url": "",
-      "pdf": "",
-      "doi": "",
-      "featured": false
-    },
-    {
-      "type": "Work in progress",
-      "title": "Who Owned Sovereignty? Republican Uncivil Society and State-Making in Soviet Ukraine and Belarus, 1965–1991",
-      "year": "",
-      "meta": "Co-authored article in progress.",
-      "tags": [
-        "Ukraine",
-        "Sovietology"
-      ],
-      "url": "",
-      "pdf": "",
-      "doi": "",
-      "featured": false
-    },
-    {
-      "type": "Work in progress",
-      "title": "Brzezinski in the USSR, October–November 1989",
-      "year": "",
-      "meta": "Documentary article in preparation.",
+      "type": "Peer-reviewed articles",
+      "title": "The Twilight of Prometheism? The Fate of Polish-Ukrainian Activists and Their Ideas during the Cold War",
+      "year": "2024",
+      "meta": "Dzieje Najnowsze 4/2024, pp. 141–166.",
+      "image": "",
       "tags": [
         "Cold War",
         "Poland",
-        "Sovietology"
+        "Ukraine",
+        "Prometheism"
       ],
-      "url": "",
+      "url": "https://apcz.umk.pl/DN/article/view/60259",
+      "link_label": "ARTICLE",
       "pdf": "",
       "doi": "",
+      "bibtex": "",
+      "featured": true
+    },
+    {
+      "type": "Peer-reviewed articles",
+      "title": "The Paradoxes of Eurasianism. George Vernadsky, Exile Networks, and the Origins of American Ukrainian Studies",
+      "year": "2024",
+      "meta": "Studia z Dziejów Rosji i Europy Środkowo-Wschodniej 61, 3/2024, pp. 61–85.",
+      "image": "",
+      "tags": [
+        "Ukraine",
+        "United States",
+        "Émigré intellectuals",
+        "Ukrainian studies",
+        "Eurasianism"
+      ],
+      "url": "https://apcz.umk.pl/SDR/article/view/57756",
+      "link_label": "ARTICLE",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
+      "featured": true
+    },
+    {
+      "type": "Peer-reviewed articles",
+      "title": "A Phoney Autonomy? Soviet Ukraine’s Foreign Relations in Historical Context, 1917–1991",
+      "year": "2023",
+      "meta": "Nowy Prometeusz 17 (2023), pp. 7–17.",
+      "image": "",
+      "tags": [
+        "Ukraine",
+        "Soviet Union",
+        "Sovereignty",
+        "Foreign relations"
+      ],
+      "url": "",
+      "link_label": "",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
+      "featured": false
+    },
+    {
+      "type": "Peer-reviewed articles",
+      "title": "Harvard’s celebrations of the Millennium of Christianity in Rus’ and dilemmas of the new Vatican Ostpolitik, 1978–1988",
+      "year": "2022",
+      "meta": "Pl.It / rassegna italiana di argomenti polacchi 13 (2022), pp. 101–117. In Polish.",
+      "image": "",
+      "tags": [
+        "Harvard",
+        "Ukraine",
+        "Vatican",
+        "Cold War"
+      ],
+      "url": "",
+      "link_label": "",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
+      "featured": false
+    },
+    {
+      "type": "Peer-reviewed articles",
+      "title": "The Forgotten Rare Bird. Marian Kamil Dziewanowski’s vision of Ukraine",
+      "year": "2022",
+      "meta": "Pamięć i Sprawiedliwość 39 (2022), pp. 333–355. In Polish.",
+      "image": "",
+      "tags": [
+        "Ukraine",
+        "Intellectual history",
+        "Émigré intellectuals"
+      ],
+      "url": "https://bibliotekanauki.pl/articles/2156702",
+      "link_label": "ARTICLE",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
+      "featured": false
+    },
+    {
+      "type": "Peer-reviewed articles",
+      "title": "Between the Jagiellonian idea and the concept of Intermarium. The evolution of Oskar Halecki’s interpretation of the Ukrainian problem",
+      "year": "2017",
+      "meta": "Klio Polska 9 (2017), pp. 57–79. In Polish.",
+      "image": "",
+      "tags": [
+        "Oskar Halecki",
+        "Ukraine",
+        "East-Central Europe",
+        "Intellectual history"
+      ],
+      "url": "",
+      "link_label": "",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
+      "featured": false
+    },
+    {
+      "type": "Book chapters",
+      "title": "A Ukrainian Kissinger? Omeljan Pritsak, reality of homeland, and the Ukrainian scholarly offensive",
+      "year": "2021",
+      "meta": "In Омелян Пріцак: Життєпис. Спадщина. Наукові інтереси. До 100-річчя від дня народження, ed. Taisa Sydorchuk. Kyiv: National University of Kyiv-Mohyla Academy, 2021, pp. 108–128. In Ukrainian.",
+      "image": "",
+      "tags": [
+        "Omeljan Pritsak",
+        "Ukraine",
+        "Ukrainian studies",
+        "Harvard"
+      ],
+      "url": "",
+      "link_label": "",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
+      "featured": false
+    },
+    {
+      "type": "Book chapters",
+      "title": "The Limits of Liberal Nationalism. Mikhail Karpovich, Ukraine and the Complexities of Cold War Russian Exile Politics",
+      "year": "2026",
+      "meta": "In Spatial Dimensions of Russian and Soviet Imperial Ideologies and Practices (1689–2024), ed. Andrzej Nowak. Paderborn: Brill Schöningh, forthcoming November 2026.",
+      "image": "",
+      "tags": [
+        "Cold War",
+        "Russia",
+        "Ukraine",
+        "Émigré intellectuals"
+      ],
+      "url": "",
+      "link_label": "",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
+      "featured": false
+    },
+    {
+      "type": "Book chapters",
+      "title": "On Andrzej Sulima Kamiński’s republican vision of history",
+      "year": "2021",
+      "meta": "Center for Historical Research, Polish Academy of Sciences in Berlin Historical Website, 2021.",
+      "image": "",
+      "tags": [
+        "Intellectual history",
+        "Polish-Ukrainian relations",
+        "Public history"
+      ],
+      "url": "",
+      "link_label": "",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
+      "featured": false
+    },
+    {
+      "type": "Work in progress",
+      "title": "Silencing the Periphery: Epistemic Violence and the Decolonisation of Knowledge in Russia’s Imperial Shadow",
+      "year": "2027",
+      "meta": "Edited volume under contract with Brill; publication planned for 2027.",
+      "image": "",
+      "tags": [
+        "Russia",
+        "Imperialism",
+        "Decolonisation",
+        "Knowledge production"
+      ],
+      "url": "",
+      "link_label": "",
+      "pdf": "",
+      "doi": "",
+      "bibtex": "",
       "featured": false
     }
   ]

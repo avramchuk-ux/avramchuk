@@ -51,6 +51,7 @@ collections:
             summary: "{{fields.status}} — {{fields.title}}"
             fields:
               - { label: "ID / anchor", name: "id", widget: "string", hint: "Lowercase, no spaces, e.g. fulbright" }
+              - { label: "Section", name: "category", widget: "select", options: ["Academic books", "Edited volumes & source editions", "Public history books"] }
               - { label: "Status", name: "status", widget: "string" }
               - { label: "Featured on homepage", name: "featured", widget: "boolean", default: false }
               - { label: "Title", name: "title", widget: "string" }
@@ -96,7 +97,7 @@ collections:
             widget: "list"
             summary: "{{fields.year}} — {{fields.title}}"
             fields:
-              - { label: "Section / type", name: "type", widget: "select", options: ["Books & editions", "Peer-reviewed articles", "Book chapters", "Review essays & reviews", "Public history & essays", "Work in progress", "Other"] }
+              - { label: "Section / type", name: "type", widget: "select", options: ["Books & editions", "Peer-reviewed articles", "Book chapters", "Review essays & reviews", "Work in progress", "Other"] }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Year", name: "year", widget: "string", required: false }
               - { label: "Citation / journal / publisher", name: "meta", widget: "text", required: false }
@@ -151,7 +152,7 @@ collections:
             widget: "list"
             summary: "{{fields.date}} — {{fields.title}}"
             fields:
-              - { label: "Type", name: "type", widget: "select", options: ["Lecture", "Conference paper", "Seminar", "Podcast", "Interview", "Media", "Public history", "Other"] }
+              - { label: "Type", name: "type", widget: "select", options: ["Academic talks & conference papers", "Public lectures & conversations", "Media & interviews", "Podcasts & public history", "Essays & commentary", "Policy analysis"] }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Venue / outlet", name: "venue", widget: "string", required: false }
               - { label: "Date", name: "date", widget: "string", required: false, hint: "e.g. 8 July 2026" }

@@ -1,23 +1,43 @@
 {
-  "page_intro": "Academic appointments, education, publications, grants, fellowships, and professional activities.",
+  "page_intro": "Academic appointments, education, research areas, and a downloadable full curriculum vitae.",
   "last_updated": "September 2026",
-  "pdf": "",
+  "pdf": "/assets/uploads/Oleksandr_Avramchuk_CV.pdf",
   "appointments": [
     {
-      "position": "Assistant Professor of History",
-      "institution": "University of Warsaw",
-      "period": ""
+      "position": "Assistant Professor",
+      "institution": "Faculty of History, University of Warsaw",
+      "period": "2025–present"
+    },
+    {
+      "position": "Postdoctoral Fellow",
+      "institution": "John Paul II Catholic University of Lublin",
+      "period": "2022–2025"
     }
   ],
-  "education": [],
-  "research_areas": [
-    "Cold War",
-    "Cultural diplomacy",
-    "Sovietology",
-    "Poland",
-    "Ukraine",
-    "Émigré intellectual history",
-    "Academic exchange"
+  "education": [
+    {
+      "degree": "Ph.D., History",
+      "institution": "University of Warsaw",
+      "year": "2021"
+    },
+    {
+      "degree": "M.A., History",
+      "institution": "National University Kyiv-Mohyla Academy",
+      "year": "2016"
+    },
+    {
+      "degree": "B.A., History",
+      "institution": "National University Kyiv-Mohyla Academy",
+      "year": "2014"
+    }
   ],
-  "note": "Upload your current CV PDF through the admin panel. You can also add selected appointments and education entries below."
+  "research_areas": [
+    "Intellectual history of East-Central Europe",
+    "Polish-Ukrainian relations",
+    "Cold War cultural diplomacy and academic exchange",
+    "Soviet Ukraine and its relations with the West and the Kremlin",
+    "Émigré knowledge production",
+    "Memory politics and Russian imperialism"
+  ],
+  "note": "The full CV includes publications, awards and fellowships, teaching, conference activity, memberships, professional service, research languages, and public history."
 }

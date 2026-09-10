@@ -1,5 +1,76 @@
 {
-  "page_intro": "Selected courses and seminars.",
-  "courses": [],
+  "page_intro": "Undergraduate and graduate teaching in modern and contemporary history, historical methodology, source studies, and academic writing.",
+  "courses": [
+    {
+      "institution": "University of Warsaw, Faculty of History",
+      "period": "2025–present",
+      "title": "Source Studies and Specialist Research Tools for Historians",
+      "level": "",
+      "language": "",
+      "description": "",
+      "syllabus_url": "",
+      "link_label": ""
+    },
+    {
+      "institution": "University of Warsaw, Faculty of History",
+      "period": "2025–present",
+      "title": "Introduction to Historical Research",
+      "level": "",
+      "language": "",
+      "description": "",
+      "syllabus_url": "",
+      "link_label": ""
+    },
+    {
+      "institution": "University of Warsaw, Faculty of History",
+      "period": "2025–present",
+      "title": "World History, 1914–1945",
+      "level": "",
+      "language": "",
+      "description": "",
+      "syllabus_url": "",
+      "link_label": ""
+    },
+    {
+      "institution": "University of Warsaw, Faculty of History",
+      "period": "2025–present",
+      "title": "World History, since 1945",
+      "level": "",
+      "language": "",
+      "description": "",
+      "syllabus_url": "",
+      "link_label": ""
+    },
+    {
+      "institution": "University of Warsaw, Faculty of History",
+      "period": "2025–present",
+      "title": "History of the Cultural Cold War",
+      "level": "",
+      "language": "",
+      "description": "",
+      "syllabus_url": "",
+      "link_label": ""
+    },
+    {
+      "institution": "University of Warsaw, Faculty of History",
+      "period": "2025–present",
+      "title": "Introduction to Academic Writing",
+      "level": "",
+      "language": "",
+      "description": "",
+      "syllabus_url": "",
+      "link_label": ""
+    },
+    {
+      "institution": "Ukrainian Free University, Munich",
+      "period": "2022–2023",
+      "title": "Ukraine on the World Stage: History, Culture, Geopolitics",
+      "level": "Seminar",
+      "language": "",
+      "description": "",
+      "syllabus_url": "",
+      "link_label": ""
+    }
+  ],
   "supervision_note": ""
 }

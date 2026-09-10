@@ -1,29 +1,149 @@
 {
-  "page_intro": "Selected lectures, conference presentations, public history, podcasts, interviews, and media contributions.",
+  "page_intro": "Academic talks, public lectures, media appearances, public history, commentary, and policy-oriented writing.",
   "items": [
     {
-      "type": "Selected lecture",
-      "title": "Cold War cultural diplomacy and the politics of academic exchange",
-      "venue": "Add venue",
-      "date": "",
-      "description": "A public-facing presentation of the Fulbright project and its implications for understanding Polish-American relations.",
-      "url": ""
+      "type": "Academic talks & conference papers",
+      "title": "The Ukrainian Contribution to Cold War Area Studies on the Soviet Union: The Munich Institute as a Case Study",
+      "venue": "Diasporas, Exile Scholars and Knowledge Production in Area Studies, DHI Warsaw",
+      "date": "20–21 April 2026",
+      "description": "",
+      "url": "",
+      "link_label": ""
     },
     {
-      "type": "Selected lecture",
-      "title": "East-Central Europe in Cold War America",
-      "venue": "Add venue",
-      "date": "",
-      "description": "How émigré scholars and American institutions turned a contested geographical concept into a field of knowledge.",
-      "url": ""
+      "type": "Academic talks & conference papers",
+      "title": "Writing a Canon in Exile: The Holodomor and Ukrainian Cold War Politics of Memory",
+      "venue": "Narrating Extreme Experiences: The Memory of the Holodomor in 20th and 21st-Century Slavic Literature, Leipzig",
+      "date": "5–6 December 2025",
+      "description": "",
+      "url": "",
+      "link_label": ""
     },
     {
-      "type": "Selected lecture",
-      "title": "Giedroyc, Brzezinski, and the political imagination of Eastern Europe",
-      "venue": "Add venue",
-      "date": "",
-      "description": "On intellectual exchange between Kultura, American Sovietology, and foreign-policy circles.",
-      "url": ""
+      "type": "Academic talks & conference papers",
+      "title": "Witnesses to Researchers. The Holodomor in Ukrainian Exile Sovietology, 1945–1991",
+      "venue": "ASEEES Annual Convention, Washington",
+      "date": "20–23 November 2025",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "Abraham Brumberg, “Problems of Communism,” and Polish Networks in Cold War Sovietology",
+      "venue": "Imperialism, Decolonization, Agency. Historical and Political Discourses of Power in the Global East, Warsaw",
+      "date": "13–14 November 2025",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "Ukrainian Studies on Trial. The Soviet Campaign to Discredit the Harvard Ukrainian Research Institute",
+      "venue": "The Politics of Nazi Accusations: The Soviet Union and anti-Soviet Nationalisms in the Cold War, Lviv",
+      "date": "6–7 October 2025",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "The RUSSKIY MIRage. America and the Blurred Lines of Russia’s Legitimate Interests",
+      "venue": "Russkiy Mir: Historical Genealogies, Geocultural Meanings, Strategic Goals, and Possible Boundaries of the Russian World Concept, Warsaw",
+      "date": "26–27 September 2025",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "1945 in Ukrainian Exile Thought: From Yalta’s “Betrayal” to the “Realities” School",
+      "venue": "Historical (Re-)interpretations of 1945 in the Former European Socialist Countries, Zagreb",
+      "date": "25 September 2025",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "Silenced Minds: America, Exiled Intellectuals and the Future of the Soviet Empire, 1945–1991",
+      "venue": "International Workshop “Uprooted: Central and Eastern European Diasporas in North America”, Bucharest",
+      "date": "26–27 June 2025",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "Halfway to Liberation: Ukrainian Cold War Émigrés and the Pitfalls of U.S. Strategic Ambivalence",
+      "venue": "ASEEES Annual Convention, Boston",
+      "date": "24 November 2024",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "East-Central Europe in Cold War America: The Rise and Fall of an Intellectual Concept",
+      "venue": "The Future of Central and East European Studies in the Light of Russia’s War of Aggression Against Ukraine, Warsaw",
+      "date": "17 October 2024",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "Paper Bullets. The Prolog Research Corporation and Ukrainian Exile Publishing during the Cold War",
+      "venue": "Summer Academy “East and Central European Cultures in Exile”, Marburg",
+      "date": "28–30 August 2024",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "The Exiled Mind. Anti-Soviet Defectors, Munich Institute, and the Cold War Politics of Knowledge",
+      "venue": "War, Literature, and the Return of Ideology, Kjerringøy, Norway",
+      "date": "5–6 June 2024",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "East Meets West: Exile Intellectuals on (East-)Central Europe during the Cold War",
+      "venue": "Invisible University for Ukraine at Central European University, Vienna (online)",
+      "date": "7 May 2024",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Academic talks & conference papers",
+      "title": "How to Befriend an Enemy? A Strange Case of Polish-U.S. Intellectual Entanglement during the Cold War",
+      "venue": "International Friendship within and beyond the Iron Curtain, Ljubljana",
+      "date": "18–19 April 2024",
+      "description": "",
+      "url": "",
+      "link_label": ""
+    },
+    {
+      "type": "Podcasts & public history",
+      "title": "Bez ogłoszenia wojny [Undeclared War]",
+      "venue": "Ukrainian-language history podcast on Ukraine, Eastern Europe, and Russian imperialism",
+      "date": "2022–present",
+      "description": "Co-host.",
+      "url": "",
+      "link_label": "LISTEN"
+    },
+    {
+      "type": "Essays & commentary",
+      "title": "Klio w służbie polityki: Perspektywa historyczna w amerykańskiej wizji Europy Wschodniej",
+      "venue": "Obóz, vol. 56–57, pp. 51–63",
+      "date": "2017",
+      "description": "Public-facing essay in Polish.",
+      "url": "",
+      "link_label": "READ"
     }
   ]
 }

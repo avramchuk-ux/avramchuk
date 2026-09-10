@@ -28,24 +28,45 @@ async function home(site){
 async function booksPage(){
   const d=await load('books');
   setText('#page-intro',d.page_intro);
-  $('#books-list').innerHTML=`<section><div class="container"><div class="compact-panel">${
-    d.items.map((x,i)=>{
-      const id=esc(x.id||'book-'+i);
-      const thumb=x.cover?`<div>${optionalImg(x.cover,'compact-book-cover',x.title)}</div>`:'';
-      const label=x.link_label||'Publisher';
-      return `<article class="compact-book-item ${x.cover?'':'no-thumb'}" id="${id}">
-        ${thumb}
-        <div class="compact-book-copy">
-          <div class="compact-status">${esc(x.status||'Book')}</div>
-          <h2>${esc(x.title)}</h2>
-          ${x.subtitle?`<h3><em>${esc(x.subtitle)}</em></h3>`:''}
-          <div class="meta">${esc([x.publisher,x.publication_note||x.year].filter(Boolean).join(' · '))}</div>
-          ${paras(x.description)}
-          ${x.external_url?`<div class="publication-links">${link(x.external_url,label)}</div>`:''}
-        </div>
-      </article>`;
-    }).join('')
-  }</div></div></section>`;
+  const sidebar=$('#books-sidebar'), box=$('#books-groups');
+  const definitions=[
+    {key:'academic',label:'Academic books',categories:['Academic books']},
+    {key:'edited',label:'Edited volumes & source editions',categories:['Edited volumes & source editions']},
+    {key:'public',label:'Public history books',categories:['Public history books']}
+  ];
+  const groups=definitions.filter(g=>d.items.some(x=>g.categories.includes(x.category||'Academic books')));
+  sidebar.innerHTML=`<button class="pub-side-btn active" data-group="all">All books</button>${groups.map(g=>`<button class="pub-side-btn" data-group="${esc(g.key)}">${esc(g.label)}</button>`).join('')}`;
+  function item(x,i){
+    const id=esc(x.id||'book-'+i);
+    const thumb=x.cover?`<div>${optionalImg(x.cover,'compact-book-cover',x.title)}</div>`:'';
+    const label=x.link_label||'Publisher';
+    return `<article class="compact-book-item ${x.cover?'':'no-thumb'}" id="${id}">
+      ${thumb}
+      <div class="compact-book-copy">
+        <div class="compact-status">${esc(x.status||'Book')}</div>
+        <h2>${esc(x.title)}</h2>
+        ${x.subtitle?`<h3><em>${esc(x.subtitle)}</em></h3>`:''}
+        <div class="meta">${esc([x.publisher,x.publication_note||x.year].filter(Boolean).join(' · '))}</div>
+        ${paras(x.description)}
+        ${x.external_url?`<div class="publication-links">${link(x.external_url,label)}</div>`:''}
+      </div>
+    </article>`;
+  }
+  function draw(key='all'){
+    const active=key==='all'?groups:groups.filter(g=>g.key===key);
+    box.innerHTML=active.map(g=>{
+      const arr=d.items.filter(x=>g.categories.includes(x.category||'Academic books'));
+      return arr.length?`<div class="book-group"><h2>${esc(g.label)}</h2><div class="compact-panel">${arr.map(item).join('')}</div></div>`:'';
+    }).join('')||`<p class="empty">Add books in /admin.</p>`;
+  }
+  let key='all'; draw();
+  sidebar.addEventListener('click',e=>{
+    if(!e.target.matches('.pub-side-btn'))return;
+    $$('.pub-side-btn',sidebar).forEach(b=>b.classList.remove('active'));
+    e.target.classList.add('active');
+    key=e.target.dataset.group;
+    draw(key);
+  });
 }
 
 async function researchPage(){const d=await load('research');setText('#page-intro',d.page_intro);$('#research-list').innerHTML=d.items.map((x,i)=>`<section id="${esc(x.id||'project-'+i)}"><div class="container"><div class="smallcaps">${esc(x.number||String(i+1).padStart(2,'0'))}</div><h2>${esc(x.title)}</h2><div class="prose">${paras(x.body)}${x.related?`<p><strong>Related:</strong> ${esc(x.related)}</p>`:''}</div></div></section>`).join('')}
@@ -57,7 +78,6 @@ async function pubsPage(){
   const definitions=[
     {key:'books',label:'Books & editions',types:['Books & editions']},
     {key:'articles',label:'Articles, book chapters & reviews',types:['Peer-reviewed articles','Book chapters','Review essays & reviews']},
-    {key:'public',label:'Public history & essays',types:['Public history & essays']},
     {key:'progress',label:'Work in progress',types:['Work in progress']},
     {key:'other',label:'Other',types:['Other']}
   ];
@@ -108,27 +128,56 @@ async function teachingPage(){
 }
 
 async function talksPage(){
-  const d=await load('talks');setText('#page-intro',d.page_intro);
-  const sidebar=$('#talks-sidebar'), box=$('#talks-groups');
+  const d=await load('talks');
+  setText('#page-intro',d.page_intro);
+  const sidebar=$('#talks-sidebar'), toolbar=$('#talks-toolbar'), box=$('#talks-groups');
   const definitions=[
-    {key:'lectures',label:'Lectures & talks',types:['Lecture','Conference paper','Seminar','Selected lecture']},
-    {key:'interviews',label:'Interviews & conversations',types:['Podcast','Interview']},
-    {key:'media',label:'Media & public history',types:['Media','Public history']},
-    {key:'other',label:'Other',types:['Other']}
+    {key:'academic',label:'Academic talks & conference papers',types:['Academic talks & conference papers']},
+    {key:'publiclectures',label:'Public lectures & conversations',types:['Public lectures & conversations']},
+    {key:'media',label:'Media & interviews',types:['Media & interviews']},
+    {key:'podcasts',label:'Podcasts & public history',types:['Podcasts & public history']},
+    {key:'essays',label:'Essays & commentary',types:['Essays & commentary']},
+    {key:'policy',label:'Policy analysis',types:['Policy analysis']}
   ];
-  const groups=definitions.filter(g=>d.items.some(x=>g.types.includes(x.type||'Other')));
-  const known=new Set(definitions.flatMap(g=>g.types));
-  const extraTypes=[...new Set(d.items.map(x=>x.type||'Other').filter(t=>!known.has(t)))];
-  extraTypes.forEach((t,i)=>groups.push({key:`extra-${i}`,label:t,types:[t]}));
+  const groups=definitions.filter(g=>d.items.some(x=>g.types.includes(x.type||'')));
+  toolbar.innerHTML=`<input id="talks-search" type="search" placeholder="Type to filter" aria-label="Search talks, media, and public writing">`;
   sidebar.innerHTML=`<button class="pub-side-btn active" data-group="all">All talks & media</button>${groups.map(g=>`<button class="pub-side-btn" data-group="${esc(g.key)}">${esc(g.label)}</button>`).join('')}`;
-  function guessLabel(x){if(x.link_label)return x.link_label;const t=(x.type||'').toLowerCase();if(t.includes('podcast'))return'Listen';if(t.includes('interview')||t.includes('media'))return'Watch / read';return'Event / media'}
-  function item(x){return `<article class="compact-talk-item"><div class="talk-year">${esc(x.date||'')}</div><div class="compact-talk-copy"><div class="pub-title">${esc(x.title)}</div><div class="meta">${esc(x.venue||'')}</div>${x.description?`<p>${esc(x.description)}</p>`:''}${x.url?`<div class="publication-links">${link(x.url,guessLabel(x))}</div>`:''}</div></article>`}
-  function draw(key='all'){
-    const active=key==='all'?groups:groups.filter(g=>g.key===key);
-    box.innerHTML=active.map(g=>{const arr=d.items.filter(x=>g.types.includes(x.type||'Other'));return arr.length?`<div class="talk-group"><h2>${esc(g.label)}</h2>${arr.map(item).join('')}</div>`:''}).join('')||`<p class="empty">Add talks and media items in /admin.</p>`;
+  function guessLabel(x){
+    if(x.link_label)return x.link_label;
+    const t=(x.type||'').toLowerCase();
+    if(t.includes('podcast'))return'Listen';
+    if(t.includes('media'))return'Watch / read';
+    if(t.includes('essays')||t.includes('policy'))return'Read';
+    return'Event';
   }
-  let key='all';draw();
-  sidebar.addEventListener('click',e=>{if(!e.target.matches('.pub-side-btn'))return;$$('.pub-side-btn',sidebar).forEach(b=>b.classList.remove('active'));e.target.classList.add('active');key=e.target.dataset.group;draw(key)});
+  function item(x){
+    return `<article class="compact-talk-item">
+      <div class="talk-year">${esc(x.date||'')}</div>
+      <div class="compact-talk-copy">
+        <div class="pub-title">${esc(x.title)}</div>
+        <div class="meta">${esc(x.venue||'')}</div>
+        ${x.description?`<p>${esc(x.description)}</p>`:''}
+        ${x.url?`<div class="publication-links">${link(x.url,guessLabel(x))}</div>`:''}
+      </div>
+    </article>`;
+  }
+  function draw(key='all',q=''){
+    const ql=q.toLowerCase();
+    const active=key==='all'?groups:groups.filter(g=>g.key===key);
+    box.innerHTML=active.map(g=>{
+      const arr=d.items.filter(x=>g.types.includes(x.type||'')&&(!ql||[x.title,x.venue,x.date,x.description,x.type].join(' ').toLowerCase().includes(ql)));
+      return arr.length?`<div class="talk-group"><h2>${esc(g.label)}</h2>${arr.map(item).join('')}</div>`:'';
+    }).join('')||`<p class="empty">No items match this search.</p>`;
+  }
+  let key='all'; draw();
+  sidebar.addEventListener('click',e=>{
+    if(!e.target.matches('.pub-side-btn'))return;
+    $$('.pub-side-btn',sidebar).forEach(b=>b.classList.remove('active'));
+    e.target.classList.add('active');
+    key=e.target.dataset.group;
+    draw(key,$('#talks-search').value);
+  });
+  $('#talks-search').addEventListener('input',e=>draw(key,e.target.value));
 }
 
 async function aboutPage(){const d=await load('about');setText('#page-intro',d.page_intro);$('#about-body').innerHTML=(d.paragraphs||[]).map(p=>`<p>${esc(p)}</p>`).join('');setText('#short-bio',d.short_bio);setText('#organizer-note',d.organizer_note);$('#about-photo').innerHTML=imageOrPlaceholder(d.portrait,'portrait')}
