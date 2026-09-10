@@ -113,6 +113,31 @@ collections:
               - { label: "BibTeX", name: "bibtex", widget: "text", required: false }
               - { label: "Show on homepage", name: "featured", widget: "boolean", default: false }
 
+
+  - label: "Teaching"
+    name: "teaching"
+    files:
+      - label: "Teaching"
+        name: "teaching"
+        file: "content/teaching.json"
+        fields:
+          - { label: "Page introduction", name: "page_intro", widget: "text" }
+          - label: "Courses and seminars"
+            name: "courses"
+            widget: "list"
+            required: false
+            summary: "{{fields.institution}} — {{fields.title}}"
+            fields:
+              - { label: "Institution", name: "institution", widget: "string", hint: "e.g. University of Warsaw" }
+              - { label: "Period", name: "period", widget: "string", required: false, hint: "e.g. 2025–2026" }
+              - { label: "Course / seminar title", name: "title", widget: "string" }
+              - { label: "Level", name: "level", widget: "string", required: false, hint: "e.g. BA level, MA seminar" }
+              - { label: "Language", name: "language", widget: "string", required: false, hint: "e.g. English, Polish" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Syllabus / course URL", name: "syllabus_url", widget: "string", required: false }
+              - { label: "Link button label", name: "link_label", widget: "string", required: false, hint: "e.g. SYLLABUS" }
+          - { label: "Supervision note", name: "supervision_note", widget: "text", required: false, hint: "Optional short note on BA/MA/PhD supervision." }
+
   - label: "Talks & Media"
     name: "talks"
     files:
@@ -132,6 +157,7 @@ collections:
               - { label: "Date", name: "date", widget: "string", required: false, hint: "e.g. 8 July 2026" }
               - { label: "Description", name: "description", widget: "text", required: false }
               - { label: "Event / media URL", name: "url", widget: "string", required: false }
+              - { label: "Link button label", name: "link_label", widget: "string", required: false, hint: "e.g. WATCH, LISTEN, EVENT" }
 
   - label: "About"
     name: "about"
