@@ -32,3 +32,28 @@
   color:var(--paper);
   text-decoration:none;
 }
+/* Compact buttons under books — Kurilla-style */
+
+.book-copy .link-row{
+  margin-top:.7rem;
+  gap:.5rem;
+}
+
+.book-copy .link-row .button{
+  padding:.16rem .55rem;
+  font-size:.68rem;
+  line-height:1.4;
+  font-family:var(--sans);
+  font-weight:500;
+  text-transform:uppercase;
+  border:1px solid var(--ink);
+  border-radius:2px;
+  background:transparent;
+  color:var(--ink);
+}
+
+.book-copy .link-row .button:hover{
+  background:var(--ink);
+  color:var(--paper);
+  text-decoration:none;
+}
