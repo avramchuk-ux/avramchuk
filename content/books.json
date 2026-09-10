@@ -2,56 +2,43 @@
   "page_intro": "Monographs and major editorial projects on cultural diplomacy, East-Central Europe, and Cold War intellectual history.",
   "items": [
     {
-      "id": "fulbright",
-      "status": "Forthcoming",
-      "featured": true,
-      "title": "A History of the Fulbright Program in Poland, 1945–2025",
-      "subtitle": "To Build a Republic of Spirit",
-      "publisher": "Manchester University Press",
-      "year": "2026",
       "publication_note": "Publication planned for November 2026",
-      "cover": "",
-      "external_url": "",
-      "description": "This book reconstructs the history of the Fulbright Program in Poland from the postwar settlement through state socialism and the democratic transition to the present. It treats academic exchange not simply as a diplomatic program, but as a site where foreign-policy objectives, institutional ambitions, scholarly careers, and individual encounters intersected.\n\nIts larger question is how repeated exchange helped shape Polish understandings of the United States and American understandings of Poland — and how those relationships outlived the political conditions in which they were created."
+      "featured": true,
+      "status": "Forthcoming",
+      "cover": "/assets/uploads/9781526189998.jpg",
+      "subtitle": "To Build a Republic of Spirit",
+      "title": "A History of the Fulbright Program in Poland, 1945–2025",
+      "id": "fulbright",
+      "external_url": "https://manchesteruniversitypress.co.uk/9781526189998/",
+      "publisher": "Manchester University Press",
+      "description": "Narrating the history of post-war intellectual encounters across the Iron Curtain, this book shows how the Fulbright Program quietly cultivated an Atlantic-minded elite in Poland from the late 1950s to today. It follows the programme through Cold War secrecy, surveillance and hard binational bargaining, revealing Washington’s blend of idealism and pragmatism and Warsaw’s calculated openness, as scholars, technocrats and future politicians built networks that outlasted communism.\n\nThe book reconstructs the ‘republic of the spirit’ they imagined – an ethical and intellectual fellowship beyond Party control – while tracing the circulation of ideas, expertise and cultural codes that shaped the 1989 transition and its aftermath. It examines how alumni legends were crafted and how daily compromises played out: democratic binationalism versus Party oversight, soft power versus security paranoia, mutual understanding versus image-management. In doing so, the book shows how international community-building actually worked, and why its foundations now feel precarious.\n\nIt also uncovers the Fulbright Program’s unintended consequences, from the rise of Poland’s pro-American ‘mandarins of the future’ to their constrained strategic autonomy in a world where US liberal internationalism is fading. As America pares back its post- 1945 role and loosens its own instruments of influence, the durability of this transatlantic community is uncertain. However, its legacy of shared mental maps, intellectual kinship and habits of cooperation still shapes Poland’s place in the world.",
+      "year": "2026"
     },
     {
-      "id": "republic-spirit-pl",
-      "status": "Published",
-      "featured": false,
-      "title": "Budując Republikę Ducha",
-      "subtitle": "",
-      "publisher": "",
-      "year": "2024",
       "publication_note": "Polish-language monograph",
-      "cover": "",
-      "external_url": "",
-      "description": "The Polish-language study from which the English Fulbright history developed."
-    },
-    {
-      "id": "east-central-europe",
-      "status": "Book in progress",
       "featured": false,
-      "title": "East-Central Europe in Cold War America",
-      "subtitle": "The Rise and Fall of an Intellectual Concept",
-      "publisher": "",
-      "year": "",
-      "publication_note": "",
+      "status": "Published",
       "cover": "",
-      "external_url": "",
-      "description": "This book traces how “East-Central Europe” became an intellectual and political category in the United States during the Cold War. It follows scholars, émigrés, universities, journals, and Cold War institutions from interwar precedents to the late twentieth century, asking how a once peripheral regional concept became an established field of knowledge — and why its boundaries eventually moved eastward.\n\nKey figures and institutions include Oscar Halecki, Otakar Odložilík, Piotr S. Wandycz, Columbia University, the National Committee for a Free Europe, and the institutional world that eventually coalesced around Slavic and East European studies."
-    },
-    {
-      "id": "giedroyc-brzezinski",
-      "status": "Source edition in preparation",
-      "featured": false,
-      "title": "Jerzy Giedroyc – Zbigniew Brzezinski. Correspondence",
       "subtitle": "",
-      "publisher": "",
-      "year": "",
-      "publication_note": "",
-      "cover": "",
+      "title": "Budując Republikę Ducha",
+      "id": "republic-spirit-pl",
       "external_url": "",
-      "description": "A documentary edition of the correspondence between Jerzy Giedroyc and Zbigniew Brzezinski, covering more than four decades of discussion about Poland, Ukraine, Russia, the Soviet Union, and American strategy toward Eastern Europe.\n\nThe project treats their correspondence not only as a record of two prominent intellectuals, but as an entry point into the networks connecting the Paris Kultura, American Sovietology, foundations, universities, and policy circles."
+      "publisher": "",
+      "description": "The Polish-language study from which the English Fulbright history developed.",
+      "year": "2024"
+    },
+    {
+      "publication_note": "",
+      "featured": false,
+      "status": "Source edition in preparation",
+      "cover": "",
+      "subtitle": "",
+      "title": "Jerzy Giedroyc – Zbigniew Brzezinski. Correspondence",
+      "id": "giedroyc-brzezinski",
+      "external_url": "",
+      "publisher": "",
+      "description": "A documentary edition of the correspondence between Jerzy Giedroyc and Zbigniew Brzezinski, covering more than four decades of discussion about Poland, Ukraine, Russia, the Soviet Union, and American strategy toward Eastern Europe.\n\nThe project treats their correspondence not only as a record of two prominent intellectuals, but as an entry point into the networks connecting the Paris Kultura, American Sovietology, foundations, universities, and policy circles.",
+      "year": ""
     }
   ]
 }
