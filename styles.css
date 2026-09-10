@@ -227,3 +227,38 @@ body[data-page="publications"] main > section{
   .compact-pub-item{grid-template-columns:60px minmax(0,1fr);gap:.8rem}
   .pub-thumb{width:60px;max-height:88px}
 }
+
+
+/* V3: compact homepage and Talks & Media */
+body[data-page="home"] section:not(.hero){padding:3.4rem 0}
+body[data-page="home"] .home-section-head{margin-bottom:1.35rem;align-items:end}
+body[data-page="home"] .home-section-head h2{font-size:clamp(1.85rem,3vw,2.7rem)}
+body[data-page="home"] .home-section-head p{font-size:.9rem;max-width:390px}
+.home-feature-book{display:grid;grid-template-columns:150px minmax(0,1fr);gap:1.8rem;align-items:start;padding:1.45rem 0}
+.home-feature-book.no-thumb{grid-template-columns:1fr}
+.home-feature-cover{width:150px;max-height:220px;object-fit:contain;object-position:top left;box-shadow:0 2px 9px rgba(23,32,51,.10)}
+.home-feature-copy h2{font-family:var(--sans);font-size:1.28rem;font-weight:600;letter-spacing:0;line-height:1.32;margin:.05rem 0 .18rem}
+.home-feature-copy h3{font-family:var(--sans);font-size:.98rem;line-height:1.4;margin:.1rem 0 .35rem}
+.home-feature-copy p{font-size:.91rem;line-height:1.55;max-width:760px;margin:.55rem 0}
+.research-compact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem;border-top:1px solid var(--line)}
+.research-compact-item{display:grid;grid-template-columns:38px minmax(0,1fr);gap:.8rem;padding:1.15rem 0;border-bottom:1px solid var(--line)}
+.research-compact-number{font-family:var(--serif);font-size:1.25rem;color:var(--wine);line-height:1.25}
+.research-compact-item h3{font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.35;margin:0 0 .25rem}
+.research-compact-item p{font-size:.87rem;line-height:1.5;color:var(--muted);margin:.2rem 0 .35rem}
+.research-compact-item a{font-size:.76rem}
+body[data-page="talks"] .page-hero{padding:4rem 0 2.2rem}
+body[data-page="talks"] .page-hero h1{font-size:clamp(3rem,5vw,4.4rem)}
+body[data-page="talks"] .page-hero .lede{font-family:var(--sans);font-size:1rem;line-height:1.65;color:var(--muted);max-width:760px}
+body[data-page="talks"] main>section{padding:3rem 0 5rem}
+.talks-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:2.7rem;align-items:start}
+.talk-group{margin:0 0 1.3rem;background:var(--white);border:1px solid var(--line);box-shadow:0 3px 14px rgba(23,32,51,.07);padding:1.4rem 1.5rem .5rem}
+.talk-group h2{font-family:var(--sans);font-size:1.55rem;font-weight:400;letter-spacing:-.015em;margin-bottom:.7rem}
+.compact-talk-item{display:grid;grid-template-columns:110px minmax(0,1fr);gap:1.15rem;align-items:start;padding:1rem 0;border-bottom:1px solid var(--line)}
+.compact-talk-item:last-child{border-bottom:0}
+.talk-year{font-size:.78rem;color:var(--muted);line-height:1.4;padding-top:.12rem}
+.compact-talk-copy .pub-title{font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.4;margin-bottom:.12rem}
+.compact-talk-copy .meta{font-size:.88rem;color:var(--ink)}
+.compact-talk-copy p{font-size:.88rem;line-height:1.5;color:var(--muted);margin:.4rem 0}
+@media(max-width:850px){.research-compact-grid{grid-template-columns:1fr}.talks-layout{grid-template-columns:1fr;gap:1.2rem}.talks-layout .pub-sidebar{position:static;flex-direction:row;overflow-x:auto;gap:1rem;padding-bottom:.25rem}}
+@media(max-width:520px){.home-feature-book{grid-template-columns:92px minmax(0,1fr);gap:1rem}.home-feature-cover{width:92px;max-height:138px}.home-feature-copy h2{font-size:1.08rem}.compact-talk-item{grid-template-columns:1fr;gap:.2rem}.talk-year{font-size:.72rem}}
+\n\n/* Teaching — compact institution/course layout inspired by Kurilla */\nbody[data-page="teaching"] .page-hero{padding:4rem 0 2.2rem}\nbody[data-page="teaching"] .page-hero h1{font-size:clamp(3rem,5vw,4.4rem)}\nbody[data-page="teaching"] .page-hero .lede{font-family:var(--sans);font-size:1rem;line-height:1.65;color:var(--muted);max-width:760px}\nbody[data-page="teaching"] main>section{padding:3rem 0 5rem}\n.teaching-group{padding:0 0 2.4rem;border-bottom:0}\n.teaching-group+ .teaching-group{padding-top:.8rem}\n.teaching-group h2{font-family:var(--sans);font-size:1.3rem;font-weight:600;letter-spacing:0;margin:0}\n.teaching-period{font-size:.82rem;color:var(--muted);margin:.1rem 0 .85rem}\n.teaching-panel{background:var(--white);border:1px solid var(--line);box-shadow:0 3px 14px rgba(23,32,51,.07);padding:.25rem 1.6rem}\n.teaching-item{padding:1.2rem 0;border-bottom:1px solid var(--line)}\n.teaching-item:last-child{border-bottom:0}\n.teaching-title{font:600 1rem/1.4 var(--sans);margin-bottom:.08rem}\n.teaching-copy p{max-width:880px;margin:.45rem 0;font-size:.93rem;line-height:1.58}\n.teaching-supervision{margin-top:1rem;padding-top:2rem;border-top:1px solid var(--line)}\n.teaching-supervision h2{font-family:var(--sans);font-size:1.3rem;font-weight:600;letter-spacing:0}\n.teaching-supervision p{max-width:880px;font-size:.94rem}\n@media(max-width:520px){.teaching-panel{padding:.15rem 1rem}.teaching-group h2,.teaching-supervision h2{font-size:1.15rem}}\n
