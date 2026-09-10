@@ -1,15 +1,12 @@
 {
-  "name": "Oleksandr Avramchuk",
-  "role": "Assistant Professor of History",
-  "institution": "University of Warsaw",
+  "home_research_intro": "Four connected areas organize my current work.",
   "eyebrow": "Historian · University of Warsaw",
+  "publications_heading": "Selected work",
+  "home_feature_label": "Featured book",
+  "name": "Oleksandr Avramchuk",
+  "orcid_url": "https://orcid.org/0000-0003-3470-771X",
+  "intro": "I am a historian of the Cold War and transatlantic relations. My research examines political, intellectual, and cultural cooperation between the United States and East-Central Europe, with particular attention to Poland, Ukraine and Russia. I am especially interested in the long-term consequences of Cold War-era ideas, institutions, and networks for contemporary transatlantic relations and the politics of the region.",
   "tagline": "Historian of the Cold War, cultural diplomacy, and East-Central Europe.",
-  "intro": "I study how scholars, diplomats, foundations, émigré intellectuals, and institutions created ways of thinking about Eastern Europe across the Cold War divide. My work focuses especially on the circulation of ideas between the United States, Poland, Ukraine, and émigré communities.",
-  "email": "",
-  "orcid_url": "",
-  "scholar_url": "",
-  "profile_url": "",
-  "portrait": "",
   "theme_tags": [
     "Cold War",
     "Cultural Diplomacy",
@@ -19,11 +16,15 @@
     "Ukraine",
     "Sovietology",
     "Émigré Intellectuals",
-    "Polish-Ukrainian Relations"
+    "Polish-Ukrainian Relations",
+    "Russia"
   ],
-  "home_feature_label": "Featured book",
-  "home_research_heading": "Ideas, institutions, and the Cold War divide",
-  "home_research_intro": "Four connected areas organize my current work.",
-  "publications_heading": "Selected work",
-  "publications_intro": "A short selection; the full bibliography is on the publications page."
+  "publications_intro": "A short selection; the full bibliography is on the publications page.",
+  "role": "Assistant Professor of History",
+  "scholar_url": "https://scholar.google.com/citations?user=4R4cGfoAAAAJ&hl=en",
+  "institution": "University of Warsaw",
+  "profile_url": "",
+  "portrait": "/assets/uploads/avramchuk_homepage_4x5.jpg",
+  "email": "o.avramchuk2@uw.edu.pl",
+  "home_research_heading": "Ideas, institutions, and the Cold War divide"
 }
