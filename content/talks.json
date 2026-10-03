@@ -129,11 +129,11 @@
     },
     {
       "type": "Podcasts & public history",
-      "title": "Bez ogłoszenia wojny [Undeclared War]",
+      "title": "Bez wypowiedzenia wojny [Undeclared War, Без оголошення війни]",
       "venue": "Ukrainian-language history podcast on Ukraine, Eastern Europe, and Russian imperialism",
       "date": "2022–present",
       "description": "Co-host.",
-      "url": "",
+      "url": "https://podcasts.apple.com/us/podcast/%D0%B1%D0%B5%D0%B7-%D0%BE%D0%B3%D0%BE%D0%BB%D0%BE%D1%88%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B2%D1%96%D0%B9%D0%BD%D0%B8/id1617407150",
       "link_label": "LISTEN"
     },
     {
@@ -144,6 +144,13 @@
       "description": "Public-facing essay in Polish.",
       "url": "",
       "link_label": "READ"
+    },
+    {
+      "type": "Podcasts & public history",
+      "title": "From “the Gathering of the Rus’ Lands” to the “Russkiy Mir”: The Origins of Russia’s War against Ukraine",
+      "venue": "Jerzy Pniewski and Leopold Infeld Colloquium, Faculty of Physics, University of Warsaw",
+      "date": "8 June 2026",
+      "url": "https://www.youtube.com/watch?v=xwTTucSn5XQ"
     }
   ]
 }
