@@ -146,11 +146,12 @@
       "link_label": "READ"
     },
     {
-      "type": "Podcasts & public history",
+      "type": "Public lectures & conversations",
       "title": "From “the Gathering of the Rus’ Lands” to the “Russkiy Mir”: The Origins of Russia’s War against Ukraine",
       "venue": "Jerzy Pniewski and Leopold Infeld Colloquium, Faculty of Physics, University of Warsaw",
       "date": "8 June 2026",
-      "url": "https://www.youtube.com/watch?v=xwTTucSn5XQ"
+      "url": "https://www.youtube.com/watch?v=xwTTucSn5XQ",
+      "link_label": "WATCH"
     }
   ]
 }
