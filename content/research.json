@@ -18,12 +18,20 @@
       "related": "Kultura · Sovietology · détente · Brzezinski · Giedroyc · intellectual networks."
     },
     {
-      "id": "ukraine",
-      "number": "03",
+      "id": "ukraine-russia",
+      "number": "04",
       "title": "Ukraine, Russia & Imperial Power",
       "summary": "Ukraine’s place in the Soviet and post-Soviet political order, the contradictions of Soviet federalism, and its central role in Russian conceptions of statehood, empire, and great-power status.",
       "body": "My research examines the historical relationship between Ukraine and Russia, focusing on Ukraine’s place within the Soviet system of power and its significance for Russian imperial ambitions. Moving beyond interpretations that reduce this relationship to a rigid opposition between an imperial centre and a subordinated periphery, I explore the contradictions of Soviet federalism, the political agency of Ukrainian elites, and Ukraine’s strategic importance to the Soviet state.\n\nI am particularly interested in how Ukraine shaped Russian understandings of statehood, national identity, and great-power status. The dissolution of the Soviet Union in 1991 marked a fundamental transformation of this relationship, but did not resolve the claims and expectations inherited from the imperial past. My work therefore extends into the post-Soviet period, tracing the contested meanings of sovereignty, the persistence and reinvention of imperial ambitions, and the historical processes that contributed to Russia’s war against Ukraine.",
       "related": "Ukrainian–Russian relations · Soviet federalism · sovereignty · empire and statehood · political elites · great-power identity · Soviet collapse · post-Soviet relations."
+    },
+    {
+      "title": "Ukraine’s Global Intellectual History",
+      "number": "03",
+      "summary": "Ukrainian intellectual life across the Cold War divide: émigré scholars, Soviet-era dissidents, traditions of political thought, and the institutions that made Ukrainian studies a global academic field.",
+      "body": "My research explores the intellectual history of modern Ukraine as a history that unfolded both within the country and across its borders. I am particularly interested in the scholars, writers, and political thinkers who, working in exile or under Soviet rule, developed alternative visions of Ukraine’s past, identity, and political future.\n\nRather than treating the Ukrainian diaspora as a marginal extension of national history, I examine émigré intellectuals as participants in the wider intellectual history of the Cold War. Reconstructing their individual and collective biographies, I trace the circulation of ideas and the remarkable institutions they established in North America, from Harvard to the major centres of Ukrainian studies in Canada. I also explore the relationship between intellectual life in exile and the development of critical thought and dissent within Soviet Ukraine, taking account of both the connections and the barriers that separated these worlds.\n\nAn important aim of this work is to recover the diversity of modern Ukrainian intellectual traditions, too often overshadowed by the history of integral nationalism. Liberal, democratic, socialist, conservative, and other currents of thought shaped different understandings of Ukrainian nationhood and Ukraine’s place in Europe. By bringing these traditions into a shared historical perspective, I seek to demonstrate how Ukrainian intellectuals, both at home and abroad, contributed to wider debates about political order of postwar Europe.",
+      "related": "Ukrainian intellectual history · émigré scholarship · Soviet dissent · Ukrainian studies · transnational intellectual networks · intellectual biography · Cold War · political thought · diaspora and homeland · knowledge institutions",
+      "id": "ukraines-global-intellectual-history"
     }
   ]
 }
