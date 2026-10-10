@@ -2,7 +2,7 @@
   "page_intro": "Academic books and editions, articles, book chapters, reviews, and work in progress.",
   "items": [
     {
-      "meta": "Manchester: Manchester University Press, forthcoming November 2026.",
+      "meta": "Manchester: Manchester University Press, 2026.",
       "bibtex": "",
       "featured": false,
       "url": "https://manchesteruniversitypress.co.uk/9781526189998/",
@@ -63,8 +63,8 @@
       "bibtex": "",
       "featured": true,
       "url": "https://ies.lublin.pl/monografie/m43-paradoks-istnienia/#:~:text=Pe%C5%82ny%20tekst%20publikacji%3A-,PDF,-Instytut%20Europy%20%C5%9Arodkowej",
-      "link_label": "",
-      "pdf": "",
+      "link_label": "IEŚ",
+      "pdf": "/assets/uploads/2026_paradoks-istnienia.-korespondencja-michata-łesiowa-i-romana-szporluka-1955-2016.pdf",
       "title": "Paradoks istnienia. Korespondencja Michała Łesiowa i Romana Szporluka 1955–2016",
       "tags": [
         "Polish-Ukrainian relations",
@@ -77,11 +77,30 @@
       "doi": ""
     },
     {
-      "meta": "Yearbook of the Institute of East-Central Europe 4/2025, pp. 123–148.",
+      "meta": "In Spatial Dimensions of Russian and Soviet Imperial Ideologies and Practices (1689–2024), ed. Andrzej Nowak. Paderborn: Brill Schöningh, 2026, pp. 110-133",
       "bibtex": "",
       "featured": true,
       "url": "",
-      "link_label": "",
+      "link_label": "BRILL",
+      "pdf": "/assets/uploads/2026_avramchuk_the-limits-of-liberal-nationalism.-mikhail-karpovich-ukraine-and-the-complexities-of-cold-war-russian-exile-politics.pdf",
+      "title": "The Limits of Liberal Nationalism. Mikhail Karpovich, Ukraine and the Complexities of Cold War Russian Exile Politics",
+      "tags": [
+        "Cold War",
+        "Russia",
+        "Ukraine",
+        "Émigré intellectuals"
+      ],
+      "type": "Book chapters",
+      "image": "/assets/uploads/coverimage.jpeg",
+      "year": "2026",
+      "doi": ""
+    },
+    {
+      "meta": "Yearbook of the Institute of East-Central Europe 4/2025, pp. 123–148.",
+      "bibtex": "",
+      "featured": true,
+      "url": "https://ies.lublin.pl/wp-content/uploads/2025/12/riesw_2025-04-05-1.pdf",
+      "link_label": "ARTICLE",
       "pdf": "",
       "title": "The decolonisation trap and the quest to reclaim a “kidnapped” Europe",
       "tags": [
@@ -90,7 +109,7 @@
         "Intellectual history"
       ],
       "type": "Peer-reviewed articles",
-      "image": "",
+      "image": "/assets/uploads/riesw-2025-4-600.jpg",
       "year": "2025",
       "doi": ""
     },
@@ -109,7 +128,7 @@
         "Prometheism"
       ],
       "type": "Peer-reviewed articles",
-      "image": "",
+      "image": "/assets/uploads/dzieje-najnowsze.png",
       "year": "2024",
       "doi": ""
     },
@@ -129,7 +148,7 @@
         "Eurasianism"
       ],
       "type": "Peer-reviewed articles",
-      "image": "",
+      "image": "/assets/uploads/cover_issue_1475_pl_pl.jpg",
       "year": "2024",
       "doi": ""
     },
@@ -137,9 +156,9 @@
       "meta": "Nowy Prometeusz 17 (2023), pp. 7–17.",
       "bibtex": "",
       "featured": false,
-      "url": "",
+      "url": "ARTICLE",
       "link_label": "",
-      "pdf": "",
+      "pdf": "/assets/uploads/2023_avramchuk-o.-a-phoney-autonomy.pdf",
       "title": "A Phoney Autonomy? Soviet Ukraine’s Foreign Relations in Historical Context, 1917–1991",
       "tags": [
         "Ukraine",
@@ -148,7 +167,7 @@
         "Foreign relations"
       ],
       "type": "Peer-reviewed articles",
-      "image": "",
+      "image": "https://www.profinfo.pl/sklep/nowy-prometeusz-202317,486424.html",
       "year": "2023",
       "doi": ""
     },
@@ -156,8 +175,8 @@
       "meta": "Pl.It / rassegna italiana di argomenti polacchi 13 (2022), pp. 101–117. In Polish.",
       "bibtex": "",
       "featured": false,
-      "url": "",
-      "link_label": "",
+      "url": "https://plitonline.it/2022/plit-13-2022-100-117-oleksandr-avramchuk",
+      "link_label": "ARTICLE",
       "pdf": "",
       "title": "Harvard’s celebrations of the Millennium of Christianity in Rus’ and dilemmas of the new Vatican Ostpolitik, 1978–1988",
       "tags": [
@@ -167,7 +186,7 @@
         "Cold War"
       ],
       "type": "Peer-reviewed articles",
-      "image": "",
+      "image": "/assets/uploads/2022_avramchuk-o.-harvardzkie-obchody-tysiąclecia-chrztu-rusi-a-dylematy-nowej-watykańskiej-ostpolitik-1978-1988-перенесено-_page-0001.jpg",
       "year": "2022",
       "doi": ""
     },
@@ -185,16 +204,53 @@
         "Émigré intellectuals"
       ],
       "type": "Peer-reviewed articles",
-      "image": "",
+      "image": "/assets/uploads/1-784824.jpg",
       "year": "2022",
+      "doi": ""
+    },
+    {
+      "meta": "In Омелян Пріцак: Життєпис. Спадщина. Наукові інтереси. До 100-річчя від дня народження, ed. Taisa Sydorchuk. Kyiv: National University of Kyiv-Mohyla Academy, 2021, pp. 108–128. In Ukrainian.",
+      "bibtex": "",
+      "featured": false,
+      "url": "",
+      "link_label": "",
+      "pdf": "/assets/uploads/2021_аврамчук-о.-«український-кіссинджер»-омелян-пріцак-«реалітети»-і-проєкт-«наукової-офензиви».pdf",
+      "title": "A Ukrainian Kissinger? Omeljan Pritsak, reality of homeland, and the Ukrainian scholarly offensive",
+      "tags": [
+        "Omeljan Pritsak",
+        "Ukraine",
+        "Ukrainian studies",
+        "Harvard"
+      ],
+      "type": "Book chapters",
+      "image": "/assets/uploads/5f93ebe0-3c80-41bd-b4f6-184420cfcef6.jpg",
+      "year": "2021",
+      "doi": ""
+    },
+    {
+      "meta": "Center for Historical Research, Polish Academy of Sciences in Berlin Historical Website, 2021.",
+      "bibtex": "",
+      "featured": false,
+      "url": "https://cbhist.eu/wp-content/uploads/on-askaminskis-republican-vision-of-the-history-of-poland-en.pdf",
+      "link_label": "CBH-BERLIN",
+      "pdf": "",
+      "title": "On Andrzej Sulima Kamiński’s republican vision of history",
+      "tags": [
+        "Intellectual history",
+        "Polish-Ukrainian relations",
+        "Public history"
+      ],
+      "type": "Book chapters",
+      "image": "/assets/uploads/on-askaminskis-republican-vision-of-the-history-of-poland-en-перенесено-_page-0001.jpg",
+      "year": "2021",
       "doi": ""
     },
     {
       "meta": "Klio Polska 9 (2017), pp. 57–79. In Polish.",
       "bibtex": "",
       "featured": false,
-      "url": "",
-      "link_label": "",
+      "url": "https://apcz.umk.pl/KLIOPL/article/view/KlioPL.2017.03/14241",
+      "link_label": "ARTICLE",
       "pdf": "",
       "title": "Between the Jagiellonian idea and the concept of Intermarium. The evolution of Oskar Halecki’s interpretation of the Ukrainian problem",
       "tags": [
@@ -204,64 +260,8 @@
         "Intellectual history"
       ],
       "type": "Peer-reviewed articles",
-      "image": "",
+      "image": "/assets/uploads/klio_9-7fc964ea.png",
       "year": "2017",
-      "doi": ""
-    },
-    {
-      "meta": "In Омелян Пріцак: Життєпис. Спадщина. Наукові інтереси. До 100-річчя від дня народження, ed. Taisa Sydorchuk. Kyiv: National University of Kyiv-Mohyla Academy, 2021, pp. 108–128. In Ukrainian.",
-      "bibtex": "",
-      "featured": false,
-      "url": "",
-      "link_label": "",
-      "pdf": "",
-      "title": "A Ukrainian Kissinger? Omeljan Pritsak, reality of homeland, and the Ukrainian scholarly offensive",
-      "tags": [
-        "Omeljan Pritsak",
-        "Ukraine",
-        "Ukrainian studies",
-        "Harvard"
-      ],
-      "type": "Book chapters",
-      "image": "",
-      "year": "2021",
-      "doi": ""
-    },
-    {
-      "meta": "In Spatial Dimensions of Russian and Soviet Imperial Ideologies and Practices (1689–2024), ed. Andrzej Nowak. Paderborn: Brill Schöningh, forthcoming November 2026.",
-      "bibtex": "",
-      "featured": false,
-      "url": "",
-      "link_label": "",
-      "pdf": "",
-      "title": "The Limits of Liberal Nationalism. Mikhail Karpovich, Ukraine and the Complexities of Cold War Russian Exile Politics",
-      "tags": [
-        "Cold War",
-        "Russia",
-        "Ukraine",
-        "Émigré intellectuals"
-      ],
-      "type": "Book chapters",
-      "image": "",
-      "year": "2026",
-      "doi": ""
-    },
-    {
-      "meta": "Center for Historical Research, Polish Academy of Sciences in Berlin Historical Website, 2021.",
-      "bibtex": "",
-      "featured": false,
-      "url": "",
-      "link_label": "",
-      "pdf": "",
-      "title": "On Andrzej Sulima Kamiński’s republican vision of history",
-      "tags": [
-        "Intellectual history",
-        "Polish-Ukrainian relations",
-        "Public history"
-      ],
-      "type": "Book chapters",
-      "image": "",
-      "year": "2021",
       "doi": ""
     },
     {
