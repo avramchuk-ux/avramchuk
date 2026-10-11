@@ -63,6 +63,14 @@ collections:
               - { label: "Publisher / project URL", name: "external_url", widget: "string", required: false }
               - { label: "Button label", name: "link_label", widget: "string", required: false, hint: "e.g. MANCHESTER, WUW, PROJECT" }
               - { label: "Description", name: "description", widget: "text" }
+              - label: "Additional details, awards and distinctions"
+                name: "highlights"
+                widget: "list"
+                required: false
+                summary: "{{fields.text}}"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Source / announcement URL", name: "url", widget: "string", required: false }
 
   - label: "Research projects"
     name: "research"
@@ -112,6 +120,14 @@ collections:
               - { label: "PDF", name: "pdf", widget: "file", required: false }
               - { label: "DOI (number or URL)", name: "doi", widget: "string", required: false }
               - { label: "BibTeX", name: "bibtex", widget: "text", required: false }
+              - label: "Additional details, awards and distinctions"
+                name: "highlights"
+                widget: "list"
+                required: false
+                summary: "{{fields.text}}"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Source / announcement URL", name: "url", widget: "string", required: false }
               - { label: "Show on homepage", name: "featured", widget: "boolean", default: false }
 
 
@@ -209,3 +225,26 @@ collections:
             name: "research_areas"
             widget: "list"
             field: { label: "Area", name: "area", widget: "string" }
+            
+  # NEWS — append this collection at the end of admin/config.yml (under collections:).
+  - label: "News"
+    name: "news"
+    files:
+      - label: "News & updates"
+        name: "updates"
+        file: "content/news.json"
+        fields:
+          - { label: "Page introduction", name: "page_intro", widget: "text" }
+          - label: "News entries"
+            name: "items"
+            widget: "list"
+            required: false
+            summary: "{{fields.date}} — {{fields.title}}"
+            fields:
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+              - { label: "Category", name: "category", widget: "select", options: ["New publication", "Event", "Review", "Research update", "Media appearance", "Other"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Short description", name: "description", widget: "text", required: false }
+              - { label: "External URL", name: "url", widget: "string", required: false }
+              - { label: "Link button label", name: "link_label", widget: "string", required: false, hint: "e.g. READ, EVENT, PUBLISHER" }
+
