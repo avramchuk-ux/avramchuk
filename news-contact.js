@@ -322,3 +322,192 @@
   if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })();
+/* PUBLIC HISTORY in Publications — reads existing books, never rewrites content files. */
+(() => {
+  'use strict';
+  if (document.body.dataset.page !== 'publications' || window.__avramchukPublicHistory) return;
+  window.__avramchukPublicHistory = true;
+
+  const norm = value => String(value ?? '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+  const bratni = value => /\bbratni\b|\bbraterskie\b|братні/i.test(String(value || ''));
+  const equivalent = (a,b) => norm(a) === norm(b) || (bratni(a) && bratni(b));
+  const node = (tag,cls,value) => {
+    const el=document.createElement(tag);
+    if(cls)el.className=cls;
+    if(value != null)el.textContent=String(value);
+    return el;
+  };
+  const safeUrl = s => {
+    try { const u=new URL(String(s||''), location.href); return /^https?:$/.test(u.protocol)?u.href:''; }
+    catch {return '';}
+  };
+  async function getItems(path){
+    try {
+      const response=await fetch(path,{cache:'no-store'});
+      if(!response.ok) return [];
+      const data=await response.json();
+      return Array.isArray(data.items) ? data.items : [];
+    } catch(err){console.warn('Public History: unable to load '+path,err);return [];}
+  }
+
+  function makeBook(book){
+    const card=node('article','compact-pub-item');
+    card.dataset.publicHistorySource='books';
+    if(book.id)card.id='public-history-'+book.id;
+    if(book.cover){
+      const wrapper=node('div');
+      const img=node('img','pub-thumb');
+      img.src=book.cover;img.alt=book.title||'Book cover';img.loading='lazy';
+      wrapper.appendChild(img);card.appendChild(wrapper);
+    } else card.classList.add('no-thumb');
+    const copy=node('div','compact-pub-copy');
+    copy.appendChild(node('div','pub-title',book.title||''));
+    const meta=[book.subtitle,book.publisher,book.publication_note||book.year].filter(Boolean).join(' · ');
+    if(meta)copy.appendChild(node('div','meta',meta));
+    if(Array.isArray(book.highlights)&&book.highlights.length){
+      const notes=node('div','publication-highlights');
+      for(const note of book.highlights){
+        if(!note?.text)continue;
+        const p=node('p','publication-highlight');
+        const url=safeUrl(note.url);
+        if(url){const a=node('a','',note.text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';p.appendChild(a)}
+        else p.textContent=note.text;
+        notes.appendChild(p);
+      }
+      if(notes.childElementCount)copy.appendChild(notes);
+    }
+    const url=safeUrl(book.external_url);
+    if(url){
+      const row=node('div','publication-links');
+      const a=node('a','',book.link_label||'Publisher');
+      a.href=url;a.target='_blank';a.rel='noopener noreferrer';row.appendChild(a);
+      copy.appendChild(row);
+    }
+    card.appendChild(copy);
+    return card;
+  }
+  function matches(book,q){
+    return !q || norm([book.title,book.subtitle,book.publisher,book.publication_note,book.year,book.description].filter(Boolean).join(' ')).includes(norm(q));
+  }
+  function relevantBooks(items){
+    return items.filter(x => x && (
+      norm(x.category)==='public history books' ||
+      norm(x.status)==='public history' ||
+      bratni(x.title)
+    ));
+  }
+
+  async function init(){
+    const [allBooks,allPubs]=await Promise.all([
+      getItems('content/books.json'),getItems('content/publications.json')
+    ]);
+    const sourcePublicHistory=relevantBooks(allBooks);
+    if(!sourcePublicHistory.length && !allPubs.some(x=>norm(x.type)==='public history'))return;
+    const publishedHistory=allPubs.filter(x=>norm(x.type)==='public history');
+    const sidebar=document.getElementById('pub-sidebar');
+    const box=document.getElementById('pub-groups');
+    const getSearch=()=>document.getElementById('pub-search');
+    if(!sidebar||!box)return;
+    const isNativeHistory=btn=> norm(btn?.textContent)==='public history' && !btn?.dataset.publicHistoryExtra;
+
+    function section(){
+      return [...box.querySelectorAll(':scope > .publication-group')].find(el=>norm(el.querySelector('h2')?.textContent)==='public history');
+    }
+    function position(group){
+      const groups=[...box.children];
+      const progress=groups.find(el=>norm(el.querySelector('h2')?.textContent)==='work in progress');
+      if(progress && groups.indexOf(group)>groups.indexOf(progress))box.insertBefore(group,progress);
+    }
+    function makeGroup(){
+      const el=node('div','publication-group');
+      el.dataset.publicHistorySection='1';
+      el.appendChild(node('h2','', 'Public History'));
+      return el;
+    }
+    function visibleBooks(){
+      const q=getSearch()?.value||'';
+      return sourcePublicHistory.filter(x=>matches(x,q) && !publishedHistory.some(y=>equivalent(x.title,y.title)));
+    }
+    let syncing=false;
+    function sync(){
+      if(syncing)return;
+      syncing=true;
+      try{
+        const active=sidebar.querySelector('.pub-side-btn.active');
+        const customActive=active?.dataset.publicHistoryExtra==='1';
+        const allActive=norm(active?.textContent)==='all publications';
+        const nativeHistoryActive=isNativeHistory(active);
+        const books=visibleBooks();
+        if(customActive){
+          const signature=norm(getSearch()?.value||'');
+          const existing=section();
+          if(box.dataset.publicHistoryCustomSearch===signature && box.children.length===1 && (existing?.dataset.publicHistorySection==='1' || box.firstElementChild?.dataset.publicHistoryEmpty==='1'))return;
+          const group=makeGroup();
+          // No native Public History entries if the custom tab was necessary.
+          for(const book of books)group.appendChild(makeBook(book));
+          if(books.length){box.replaceChildren(group)}
+          else {const p=node('p','empty','No publications match this search.');p.dataset.publicHistoryEmpty='1';box.replaceChildren(p)}
+          box.dataset.publicHistoryCustomSearch=signature;
+          return;
+        }
+        delete box.dataset.publicHistoryCustomSearch;
+        if(!allActive && !nativeHistoryActive)return;
+        let group=section();
+        if(!group && !books.length)return;
+        if(!group){
+          group=makeGroup();
+          const progress=[...box.children].find(el=>norm(el.querySelector('h2')?.textContent)==='work in progress');
+          if(progress)box.insertBefore(group,progress);
+          else box.appendChild(group);
+        }
+        const titles=[...group.querySelectorAll('.pub-title')].map(el=>el.textContent);
+        for(const book of books){
+          if(titles.some(title=>equivalent(title,book.title)))continue;
+          group.appendChild(makeBook(book));
+          titles.push(book.title);
+        }
+        position(group);
+        // Hide the native 'no results' message if books supply matching results.
+        if(books.length){
+          for(const el of [...box.children])if(el.matches('.empty') && norm(el.textContent).includes('no publications match'))el.remove();
+        }
+      } finally {syncing=false;}
+    }
+    function install(){
+      if(!sidebar.querySelector('.pub-side-btn'))return false;
+      let native=[...sidebar.querySelectorAll('.pub-side-btn')].find(isNativeHistory);
+      if(native){
+        const progress=[...sidebar.querySelectorAll('.pub-side-btn')].find(el=>norm(el.textContent)==='work in progress');
+        if(progress && [...sidebar.children].indexOf(native)>[...sidebar.children].indexOf(progress))sidebar.insertBefore(native,progress);
+      }
+      if(!native && sourcePublicHistory.length){
+        const btn=node('button','pub-side-btn','Public History');
+        btn.type='button';btn.dataset.group='public-history-books';btn.dataset.publicHistoryExtra='1';
+        const progress=[...sidebar.querySelectorAll('.pub-side-btn')].find(el=>norm(el.textContent)==='work in progress');
+        if(progress)sidebar.insertBefore(btn,progress);else sidebar.appendChild(btn);
+      }
+      sidebar.addEventListener('click',evt=>{
+        const button=evt.target.closest?.('button[data-public-history-extra="1"]');
+        if(!button)return;
+        evt.preventDefault();evt.stopImmediatePropagation();
+        sidebar.querySelectorAll('.pub-side-btn').forEach(b=>b.classList.toggle('active',b===button));
+        sync();
+      },true);
+      const observer=new MutationObserver(sync);
+      observer.observe(box,{childList:true});
+      getSearch()?.addEventListener('input',()=>{
+        if(sidebar.querySelector('[data-public-history-extra="1"].active')){
+          delete box.dataset.publicHistoryCustomSearch;
+          sync();
+        }
+      });
+      sync();
+      return true;
+    }
+    if(install())return;
+    const wait=new MutationObserver(()=>{if(install())wait.disconnect()});
+    wait.observe(sidebar,{childList:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+})();
