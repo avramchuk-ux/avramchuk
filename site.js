@@ -545,6 +545,16 @@ document.addEventListener('DOMContentLoaded',render);
     restoreLocalFilter();
     restoreAnchor();
   }
+ 
+/* Additive News/Contact module — keep all existing site.js code above. */
+(() => {
+  if (document.querySelector('script[data-news-contact-module]')) return;
+  const script = document.createElement('script');
+  script.src = 'news-contact.js';
+  script.setAttribute('data-news-contact-module', '');
+  document.head.appendChild(script);
+})();
+
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
