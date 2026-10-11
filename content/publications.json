@@ -36,7 +36,13 @@
       "type": "Books & editions",
       "image": "/assets/uploads/2168072-budujac-republike-ducha-oleksandr-avramchuk-1.webp",
       "year": "2024",
-      "doi": ""
+      "doi": "",
+      "highlights": [
+        {
+          "url": "https://kh-ihpan.edu.pl/images/KH2025-2/Recenzje/0606_Rec_Kozlowski.pdf",
+          "text": "Tomasz Kozłowski, review in Kwartalnik Historyczny 132, no. 2 (2025), pp. 414–418"
+        }
+      ]
     },
     {
       "meta": "Warsaw: Studium Europy Wschodniej Uniwersytetu Warszawskiego, 2024.",
@@ -56,7 +62,13 @@
       "type": "Books & editions",
       "image": "/assets/uploads/pol_pl_rzeczpospolita-uczonych-powstanie-studiow-ukrainskich-i-polsko-ukrainski-dialog-historykow-w-stanach-zjednoczonych-1939-1991-19834_1.png",
       "year": "2024",
-      "doi": ""
+      "doi": "",
+      "highlights": [
+        {
+          "text": "2024 Leon Wasilewski Historical Award (4th edition), Freedom and Democracy Foundation.",
+          "url": "https://wid.org.pl/znamy-zwyciezcow-iv-konkursu-o-nagrode-historyczna-im-leona-wasilewskiego/"
+        }
+      ]
     },
     {
       "meta": "Edited by Oleksandr Avramchuk and Ola Hnatiuk. Lublin: Institute of Central Europe, 2026.",
