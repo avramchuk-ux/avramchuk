@@ -105,7 +105,7 @@ collections:
             widget: "list"
             summary: "{{fields.year}} — {{fields.title}}"
             fields:
-              - { label: "Section / type", name: "type", widget: "select", options: ["Books & editions", "Peer-reviewed articles", "Book chapters", "Review essays & reviews", "Work in progress", "Other"] }
+              - { label: "Section / type", name: "type", widget: "select", options: ["Books & editions", "Peer-reviewed articles", "Book chapters", "Review essays & reviews", "Public History", "Work in progress", "Other"] }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Year", name: "year", widget: "string", required: false }
               - { label: "Citation / journal / publisher", name: "meta", widget: "text", required: false }
@@ -248,3 +248,189 @@ collections:
               - { label: "External URL", name: "url", widget: "string", required: false }
               - { label: "Link button label", name: "link_label", widget: "string", required: false, hint: "e.g. READ, EVENT, PUBLISHER" }
 
+  # POLSKA WERSJA — osobne tlumaczenia, wspolne dane bibliograficzne i linki.
+  - label: "Polski — Strona główna"
+    name: "pl-site"
+    files:
+      - label: "Teksty po polsku: strona główna"
+        name: "site"
+        file: "content/pl/site.json"
+        fields:
+          - { label: "Podtytuł", name: "eyebrow", widget: "string" }
+          - { label: "Stanowisko", name: "role", widget: "string" }
+          - { label: "Uczelnia", name: "institution", widget: "string" }
+          - { label: "Opis główny", name: "tagline", widget: "string" }
+          - { label: "Wprowadzenie", name: "intro", widget: "text" }
+          - { label: "Etykieta książki", name: "home_feature_label", widget: "string" }
+          - { label: "Nagłówek badań", name: "home_research_heading", widget: "string" }
+          - { label: "Opis badań", name: "home_research_intro", widget: "text" }
+          - { label: "Nagłówek publikacji", name: "publications_heading", widget: "string" }
+          - { label: "Opis publikacji", name: "publications_intro", widget: "text" }
+          - label: "Słowa kluczowe"
+            name: "theme_tags"
+            widget: "list"
+            field: { label: "Hasło", name: "keyword", widget: "string" }
+
+  - label: "Polski — O mnie"
+    name: "pl-about"
+    files:
+      - label: "Biogram po polsku"
+        name: "about"
+        file: "content/pl/about.json"
+        fields:
+          - { label: "Wprowadzenie", name: "page_intro", widget: "text" }
+          - label: "Akapity biogramu"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Akapit", name: "paragraph", widget: "text" }
+          - { label: "Krótki biogram", name: "short_bio", widget: "text" }
+          - { label: "Dla organizatorów", name: "organizer_note", widget: "text" }
+
+  - label: "Polski — Badania"
+    name: "pl-research"
+    files:
+      - label: "Opisy projektów po polsku"
+        name: "research"
+        file: "content/pl/research.json"
+        fields:
+          - { label: "Wprowadzenie", name: "page_intro", widget: "text" }
+          - label: "Tłumaczenia projektów (identyfikatory bez zmian)"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.id}} — {{fields.title}}"
+            fields:
+              - { label: "ID projektu z wersji angielskiej", name: "id", widget: "string" }
+              - { label: "Tytuł po polsku", name: "title", widget: "string" }
+              - { label: "Krótki opis po polsku", name: "summary", widget: "text" }
+              - { label: "Długi opis po polsku", name: "body", widget: "text" }
+              - { label: "Powiązane zagadnienia", name: "related", widget: "string", required: false }
+
+  - label: "Polski — Książki"
+    name: "pl-books"
+    files:
+      - label: "Polskie opisy książek"
+        name: "books"
+        file: "content/pl/books.json"
+        fields:
+          - { label: "Wprowadzenie", name: "page_intro", widget: "text" }
+          - label: "Tłumaczenia i opisy (bez duplikowania rekordów angielskich)"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.id}} — {{fields.title}}"
+            fields:
+              - { label: "ID książki (z angielskiego CMS)", name: "id", widget: "string" }
+              - { label: "Tytuł w polskiej wersji (opcjonalny)", name: "title", widget: "string", required: false }
+              - { label: "Podtytuł w polskiej wersji (opcjonalny)", name: "subtitle", widget: "string", required: false }
+              - { label: "Status", name: "status", widget: "string", required: false }
+              - { label: "Wydawca", name: "publisher", widget: "string", required: false }
+              - { label: "Informacja o wydaniu", name: "publication_note", widget: "string", required: false }
+              - { label: "Opis po polsku", name: "description", widget: "text", required: false }
+
+  - label: "Polski — Publikacje"
+    name: "pl-publications"
+    files:
+      - label: "Polskie informacje przy publikacjach"
+        name: "publications"
+        file: "content/pl/publications.json"
+        fields:
+          - { label: "Wprowadzenie", name: "page_intro", widget: "text" }
+          - label: "Opcjonalne tłumaczenia (oryginalne tytuły nie są automatycznie tłumaczone)"
+            name: "items"
+            widget: "list"
+            required: false
+            summary: "{{fields.source_title}}"
+            fields:
+              - { label: "Dokładny tytuł angielski / oryginalny (klucz)", name: "source_title", widget: "string" }
+              - { label: "Alternatywny tytuł po polsku", name: "title", widget: "string", required: false }
+              - { label: "Informacja bibliograficzna po polsku", name: "meta", widget: "text", required: false }
+
+  - label: "Polski — Dydaktyka"
+    name: "pl-teaching"
+    files:
+      - label: "Nazwy i opisy zajęć po polsku"
+        name: "teaching"
+        file: "content/pl/teaching.json"
+        fields:
+          - { label: "Wprowadzenie", name: "page_intro", widget: "text" }
+          - label: "Tłumaczenia kursów"
+            name: "courses"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Dokładny tytuł w angielskiej wersji (klucz)", name: "original_title", widget: "string" }
+              - { label: "Nazwa kursu po polsku", name: "title", widget: "string" }
+              - { label: "Uczelnia", name: "institution", widget: "string", required: false }
+              - { label: "Poziom / rodzaj", name: "level", widget: "string", required: false }
+              - { label: "Język", name: "language", widget: "string", required: false }
+              - { label: "Opis", name: "description", widget: "text", required: false }
+          - { label: "Opieka naukowa", name: "supervision_note", widget: "text", required: false }
+
+  - label: "Polski — Wystąpienia i media"
+    name: "pl-talks"
+    files:
+      - label: "Polskie opisy wystąpień"
+        name: "talks"
+        file: "content/pl/talks.json"
+        fields:
+          - { label: "Wprowadzenie", name: "page_intro", widget: "text" }
+          - label: "Opcjonalne opisy po polsku"
+            name: "items"
+            widget: "list"
+            required: false
+            summary: "{{fields.source_title}}"
+            fields:
+              - { label: "Dokładny tytuł z wersji angielskiej (klucz)", name: "source_title", widget: "string" }
+              - { label: "Tytuł po polsku", name: "title", widget: "string", required: false }
+              - { label: "Miejsce / medium", name: "venue", widget: "string", required: false }
+              - { label: "Opis", name: "description", widget: "text", required: false }
+
+  - label: "Polski — CV"
+    name: "pl-cv"
+    files:
+      - label: "CV: polskie nazwy i opisy"
+        name: "cv"
+        file: "content/pl/cv.json"
+        fields:
+          - { label: "Wprowadzenie", name: "page_intro", widget: "text" }
+          - { label: "Ostatnia aktualizacja", name: "last_updated", widget: "string" }
+          - { label: "Uwaga przy CV", name: "note", widget: "text" }
+          - label: "Zatrudnienie naukowe"
+            name: "appointments"
+            widget: "list"
+            fields:
+              - { label: "Stanowisko", name: "position", widget: "string" }
+              - { label: "Instytucja", name: "institution", widget: "string" }
+              - { label: "Okres", name: "period", widget: "string", required: false }
+          - label: "Wykształcenie"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Stopień", name: "degree", widget: "string" }
+              - { label: "Uczelnia", name: "institution", widget: "string" }
+              - { label: "Rok", name: "year", widget: "string", required: false }
+          - label: "Obszary badawcze"
+            name: "research_areas"
+            widget: "list"
+            field: { label: "Obszar", name: "area", widget: "string" }
+
+  - label: "Polski — Aktualności"
+    name: "pl-news"
+    files:
+      - label: "Aktualności po polsku (także niezależne od EN)"
+        name: "news"
+        file: "content/pl/news.json"
+        fields:
+          - { label: "Wprowadzenie", name: "page_intro", widget: "text" }
+          - label: "Polskie wiadomości"
+            name: "items"
+            widget: "list"
+            required: false
+            summary: "{{fields.date}} — {{fields.title}}"
+            fields:
+              - { label: "Tytuł angielskiego wpisu, jeśli jest tłumaczeniem (opcjonalny)", name: "source_title", widget: "string", required: false }
+              - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false, required: false }
+              - { label: "Kategoria", name: "category", widget: "select", options: ["New publication", "Event", "Review", "Research update", "Media appearance", "Other"], required: false }
+              - { label: "Tytuł po polsku", name: "title", widget: "string" }
+              - { label: "Opis", name: "description", widget: "text", required: false }
+              - { label: "Link", name: "url", widget: "string", required: false }
+              - { label: "Tekst linku", name: "link_label", widget: "string", required: false }

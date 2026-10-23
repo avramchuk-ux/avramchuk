@@ -1,0 +1,42 @@
+{
+  "page_intro": "Przebieg pracy naukowej, wykształcenie, obszary badawcze oraz pełne CV do pobrania.",
+  "last_updated": "wrzesień 2026",
+  "note": "Pełny życiorys zawiera listę publikacji, nagród i stypendiów, zajęć dydaktycznych, wystąpień konferencyjnych, członkostw i działalności popularyzatorskiej.",
+  "appointments": [
+    {
+      "position": "Adiunkt",
+      "institution": "Wydział Historii Uniwersytetu Warszawskiego",
+      "period": "2025–obecnie"
+    },
+    {
+      "position": "Stażysta podoktorski",
+      "institution": "Katolicki Uniwersytet Lubelski Jana Pawła II",
+      "period": "2022–2025"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Doktor nauk humanistycznych w dyscyplinie historia",
+      "institution": "Uniwersytet Warszawski",
+      "year": "2021"
+    },
+    {
+      "degree": "Magister historii",
+      "institution": "Narodowy Uniwersytet „Akademia Kijowsko-Mohylańska”",
+      "year": "2016"
+    },
+    {
+      "degree": "Licencjat z historii",
+      "institution": "Narodowy Uniwersytet „Akademia Kijowsko-Mohylańska”",
+      "year": "2014"
+    }
+  ],
+  "research_areas": [
+    "Historia intelektualna Europy Środkowo-Wschodniej",
+    "Stosunki polsko-ukraińskie",
+    "Dyplomacja kulturalna i wymiana akademicka w okresie zimnej wojny",
+    "Ukraina Sowiecka i jej stosunki z Zachodem oraz Moskwą",
+    "Tworzenie wiedzy w środowiskach emigracyjnych",
+    "Polityka pamięci i rosyjski imperializm"
+  ]
+}

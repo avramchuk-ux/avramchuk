@@ -1,0 +1,50 @@
+{
+  "page_intro": "Monografie naukowe, tomy pod redakcją i edycje źródłowe oraz książki popularyzatorskie.",
+  "items": [
+    {
+      "id": "fulbright",
+      "status": "W przygotowaniu",
+      "publication_note": "Planowana publikacja: listopad 2026",
+      "description": "Książka opowiada o powojennych spotkaniach intelektualnych ponad żelazną kurtyną. Pokazuje, jak Program Fulbrighta od końca lat pięćdziesiątych współtworzył w Polsce środowisko intelektualne zorientowane na współpracę atlantycką.\n\nŚledząc funkcjonowanie programu w realiach zimnej wojny — od nadzoru służb i politycznych negocjacji po codzienne doświadczenia stypendystów — rekonstruuję połączenie amerykańskiego idealizmu i pragmatyzmu z wyrachowaną otwartością władz PRL. Naukowcy, eksperci i przyszli politycy tworzyli wówczas sieci kontaktów, które przetrwały komunizm.\n\nKsiążka przygląda się wyobrażeniu „republiki ducha” jako wspólnoty etycznej i intelektualnej istniejącej poza kontrolą partii, a zarazem pokazuje obieg idei, wiedzy i wzorców kulturowych wpływających na przemiany 1989 roku i kolejne dekady. Analizuję napięcie między współpracą a nadzorem, dyplomacją publiczną a logiką bezpieczeństwa i deklarowanym wzajemnym zrozumieniem a polityką wizerunkową.\n\nW szerszej perspektywie historia Fulbrighta pozwala postawić pytanie o trwałość więzi transatlantyckich. Dziedzictwo wspólnych wyobrażeń, intelektualnych powinowactw i wypracowanych praktyk współpracy pozostaje ważne, choć świat, w którym je budowano, ulega zasadniczym zmianom."
+    },
+    {
+      "id": "budujac-republike-ducha",
+      "description": "Historia Programu Fulbrighta w Polsce na przestrzeni kolejnych dekad oraz politycznych uwarunkowań polsko-amerykańskiej wymiany akademickiej w okresie powojennym.",
+      "publication_note": "Warszawa, 2024",
+      "status": "Opublikowana"
+    },
+    {
+      "id": "rzeczpospolita-uczonych",
+      "description": "Studium narodzin ukrainistyki w Stanach Zjednoczonych oraz polsko-ukraińskiego dialogu uczonych rozwijającego się w środowiskach emigracyjnych w latach 1939–1991.",
+      "publication_note": "Warszawa, 2024",
+      "status": "Opublikowana"
+    },
+    {
+      "id": "paradoks-istnienia",
+      "publisher": "Instytut Europy Środkowej",
+      "description": "Edycja korespondencji Michała Łesiowa, językoznawcy i badacza języka oraz kultury ukraińskiej, i Romana Szporluka, wybitnego historyka nowoczesnej Europy Wschodniej i Ukrainy, obejmująca lata 1955–2016. Ich wymiana listów dokumentuje polsko-ukraińskie kontakty intelektualne na przestrzeni zimnej wojny, emigracji, upadku komunizmu i narodzin niepodległej Ukrainy.",
+      "publication_note": "Redakcja wspólnie z Olą Hnatiuk · Lublin, 2026",
+      "status": "Edycja źródłowa"
+    },
+    {
+      "id": "silencing-the-periphery",
+      "status": "Tom zbiorowy w przygotowaniu",
+      "description": "Tom zbiorowy przygotowywany do publikacji w wydawnictwie Brill.",
+      "publication_note": "Umowa wydawnicza · planowana publikacja: 2027"
+    },
+    {
+      "id": "giedroyc-brzezinski",
+      "title": "Jerzy Giedroyc – Zbigniew Brzeziński. Korespondencja",
+      "status": "Edycja źródłowa w przygotowaniu",
+      "description": "Przygotowywana edycja korespondencji Jerzego Giedroycia i Zbigniewa Brzezińskiego, dokumentująca ponad cztery dekady dyskusji o Polsce, Związku Sowieckim i amerykańskiej polityce wobec Europy Wschodniej."
+    },
+    {
+      "id": "bratni-kaidany",
+      "title": "Братні кайдани: Російські міфи про українську історію",
+      "subtitle": "Bratnie kajdany. Rosyjskie mity o historii Ukrainy",
+      "description": "Popularnonaukowa książka poświęcona rosyjskim mitom o historii Ukrainy.",
+      "status": "Książka popularnonaukowa",
+      "publication_note": "Kijów, 2025 · w języku ukraińskim"
+    }
+  ]
+}

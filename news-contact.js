@@ -64,16 +64,19 @@
   }
 
   async function loadJson(path) {
-    const response = await fetch(path, {cache:'no-store'});
+    const prefix=window.AvramchukI18n?.prefix||'';
+    const response = await fetch(prefix+path, {cache:'no-store'});
     if(!response.ok) throw new Error(`${path}: ${response.status}`);
-    return response.json();
+    const data=await response.json();
+    const name=path.match(/content\/([^/]+)\.json$/)?.[1];
+    return name && window.AvramchukI18n ? await window.AvramchukI18n.merge(name,data) : data;
   }
 
   function formatDate(s) {
     const value = clean(s);
     if(!value) return '';
     const d = /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Date(`${value}T12:00:00`) : new Date(value);
-    return Number.isNaN(d.getTime()) ? value : d.toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+    return Number.isNaN(d.getTime()) ? value : d.toLocaleDateString(window.AvramchukI18n?.pl?'pl-PL':'en-GB', {day:'numeric', month:'long', year:'numeric'});
   }
   function sortDate(s) {
     const v=Date.parse(clean(s));
@@ -100,13 +103,13 @@
           const article=item('article','news-entry');
           article.append(item('div','news-date',formatDate(n.date)));
           const right=item('div','news-copy');
-          if(n.category) right.append(item('div','news-category',n.category));
+          if(n.category) right.append(item('div','news-category',window.AvramchukI18n?.tr(n.category)||n.category));
           right.append(item('h2','',n.title));
           if(n.description) right.append(item('p','',n.description));
           const url=validLink(n.url);
           if(url){
             const row=item('div','publication-links');
-            const a=item('a','',n.link_label||'Read more');
+            const a=item('a','',window.AvramchukI18n?.tr(n.link_label||'Read more')||n.link_label||'Read more');
             a.href=url;a.rel='noopener noreferrer';a.target='_blank';
             row.append(a);right.append(row);
           }
@@ -127,7 +130,7 @@
     try{data=await loadJson('content/site.json')}catch(e){console.warn('Using fallback contact details',e)}
     text(byId('contact-name'), data.name || 'Oleksandr Avramchuk');
     text(byId('contact-position'), data.role || 'Assistant Professor of History');
-    text(byId('contact-affiliation'), data.institution ? `Faculty of History, ${data.institution}` : 'Faculty of History, University of Warsaw');
+    text(byId('contact-affiliation'), window.AvramchukI18n?.pl ? `Wydział Historii, ${data.institution||'Uniwersytet Warszawski'}` : (data.institution ? `Faculty of History, ${data.institution}` : 'Faculty of History, University of Warsaw'));
     const email=clean(data.email || 'o.avramchuk2@uw.edu.pl');
     const emailDiv=byId('contact-email');
     if(emailDiv){const a=item('a','',email);a.href=`mailto:${encodeURIComponent(email)}`;emailDiv.replaceChildren(a)}
@@ -163,7 +166,7 @@
 
   const SELECTOR = '.pub-thumb, .compact-book-cover, .home-feature-cover, .book-cover';
   const norm = s => String(s ?? '').normalize('NFKC').replace(/\s+/g, ' ').trim().toLocaleLowerCase();
-  const rootPath = 'content/';
+  const rootPath = (window.AvramchukI18n?.prefix||'')+'content/';
   const safeUrl = raw => {
     try {
       const u = new URL(String(raw || '').trim(), location.href);
@@ -292,7 +295,8 @@
         const response=await fetch(rootPath+file,{cache:'no-store'});
         if(!response.ok)return;
         const data=await response.json();
-        for (const entry of (Array.isArray(data.items)?data.items:[])) {
+        const localized=window.AvramchukI18n?await window.AvramchukI18n.merge(file.replace('.json',''),data):data;
+        for (const entry of (Array.isArray(localized.items)?localized.items:[])) {
           if(entry && entry.title && Array.isArray(entry.highlights))lookup.set(`${key}:${norm(entry.title)}`,entry.highlights);
         }
       }catch(err){ console.warn('Publication notes unavailable:',file,err); }
@@ -346,7 +350,9 @@
       const response=await fetch(path,{cache:'no-store'});
       if(!response.ok) return [];
       const data=await response.json();
-      return Array.isArray(data.items) ? data.items : [];
+      const name=path.match(/content\/([^/]+)\.json$/)?.[1];
+      const localized=name && window.AvramchukI18n ? await window.AvramchukI18n.merge(name,data) : data;
+      return Array.isArray(localized.items) ? localized.items : [];
     } catch(err){console.warn('Public History: unable to load '+path,err);return [];}
   }
 
@@ -399,7 +405,7 @@
 
   async function init(){
     const [allBooks,allPubs]=await Promise.all([
-      getItems('content/books.json'),getItems('content/publications.json')
+      getItems((window.AvramchukI18n?.prefix||'')+'content/books.json'),getItems((window.AvramchukI18n?.prefix||'')+'content/publications.json')
     ]);
     const sourcePublicHistory=relevantBooks(allBooks);
     if(!sourcePublicHistory.length && !allPubs.some(x=>norm(x.type)==='public history'))return;
@@ -408,14 +414,14 @@
     const box=document.getElementById('pub-groups');
     const getSearch=()=>document.getElementById('pub-search');
     if(!sidebar||!box)return;
-    const isNativeHistory=btn=> norm(btn?.textContent)==='public history' && !btn?.dataset.publicHistoryExtra;
+    const isNativeHistory=btn=> ['public history','historia dla szerszego odbiorcy'].includes(norm(btn?.textContent)) && !btn?.dataset.publicHistoryExtra;
 
     function section(){
-      return [...box.querySelectorAll(':scope > .publication-group')].find(el=>norm(el.querySelector('h2')?.textContent)==='public history');
+      return [...box.querySelectorAll(':scope > .publication-group')].find(el=>['public history','historia dla szerszego odbiorcy'].includes(norm(el.querySelector('h2')?.textContent)));
     }
     function position(group){
       const groups=[...box.children];
-      const progress=groups.find(el=>norm(el.querySelector('h2')?.textContent)==='work in progress');
+      const progress=groups.find(el=>['work in progress','w przygotowaniu'].includes(norm(el.querySelector('h2')?.textContent)));
       if(progress && groups.indexOf(group)>groups.indexOf(progress))box.insertBefore(group,progress);
     }
     function makeGroup(){
@@ -435,7 +441,7 @@
       try{
         const active=sidebar.querySelector('.pub-side-btn.active');
         const customActive=active?.dataset.publicHistoryExtra==='1';
-        const allActive=norm(active?.textContent)==='all publications';
+        const allActive=active?.dataset.group==='all' || ['all publications','wszystkie publikacje'].includes(norm(active?.textContent));
         const nativeHistoryActive=isNativeHistory(active);
         const books=visibleBooks();
         if(customActive){
@@ -456,7 +462,7 @@
         if(!group && !books.length)return;
         if(!group){
           group=makeGroup();
-          const progress=[...box.children].find(el=>norm(el.querySelector('h2')?.textContent)==='work in progress');
+          const progress=[...box.children].find(el=>['work in progress','w przygotowaniu'].includes(norm(el.querySelector('h2')?.textContent)));
           if(progress)box.insertBefore(group,progress);
           else box.appendChild(group);
         }

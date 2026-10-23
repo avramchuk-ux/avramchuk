@@ -2,7 +2,7 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelect
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 const paras=s=>String(s||'').split(/\n\s*\n/).filter(Boolean).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');
 const link=(url,label,cls='')=>url?`<a ${cls?`class="${cls}"`:''} href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>`:'';
-async function load(name){const r=await fetch(`content/${name}.json`,{cache:'no-store'});if(!r.ok)throw new Error(`${name}: ${r.status}`);return r.json()}
+async function load(name){const prefix=window.AvramchukI18n?.prefix||'';const r=await fetch(`${prefix}content/${name}.json`,{cache:'no-store'});if(!r.ok)throw new Error(`${name}: ${r.status}`);const data=await r.json();return window.AvramchukI18n?await window.AvramchukI18n.merge(name,data):data}
 function setText(sel,text){const el=$(sel);if(el&&text)el.textContent=text}
 function imageOrPlaceholder(src,kind='portrait'){if(src)return `<img class="${kind==='cover'?'book-cover':'portrait'}" src="${esc(src)}" alt="">`;return kind==='cover'?`<div class="cover-placeholder"><small>Book cover</small><strong>Upload cover in /admin</strong><small>Image</small></div>`:`<div class="portrait-placeholder"><span>OA</span></div>`}
 function optionalImg(src,cls,alt=''){return src?`<img class="${cls}" src="${esc(src)}" alt="${esc(alt)}">`:''}
@@ -272,9 +272,9 @@ document.addEventListener('DOMContentLoaded',render);
     if (loadPromise) return loadPromise;
     loadPromise = Promise.all(FILES.map(async key => {
       try {
-        const response = await fetch(`content/${key}.json`, {cache: 'no-store'});
+        const response = await fetch(`${window.AvramchukI18n?.prefix||''}content/${key}.json`, {cache: 'no-store'});
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return [key, await response.json()];
+        const data=await response.json();return [key,window.AvramchukI18n?await window.AvramchukI18n.merge(key,data):data];
       } catch (e) {
         console.warn(`[Site search] ${key}.json unavailable`, e);
         return [key, null];
@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded',render);
 (() => {
   if (document.querySelector('script[data-news-contact-module]')) return;
   const script = document.createElement('script');
-  script.src = 'news-contact.js';
+  script.src = `${window.AvramchukI18n?.prefix||''}news-contact.js`;
   script.setAttribute('data-news-contact-module', '');
   document.head.appendChild(script);
 })();

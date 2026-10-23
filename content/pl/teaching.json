@@ -1,0 +1,41 @@
+{
+  "page_intro": "Zajęcia licencjackie i magisterskie z historii nowożytnej i najnowszej, metodologii historii, źródłoznawstwa i warsztatu pisania akademickiego.",
+  "courses": [
+    {
+      "original_title": "Source Studies and Specialist Research Tools for Historians",
+      "title": "Źródłoznawstwo i specjalistyczne narzędzia badawcze historyka",
+      "institution": "Wydział Historii Uniwersytetu Warszawskiego"
+    },
+    {
+      "original_title": "Introduction to Historical Research",
+      "title": "Wprowadzenie do badań historycznych",
+      "institution": "Wydział Historii Uniwersytetu Warszawskiego"
+    },
+    {
+      "original_title": "World History, 1914–1945",
+      "title": "Historia powszechna, 1914–1945",
+      "institution": "Wydział Historii Uniwersytetu Warszawskiego"
+    },
+    {
+      "original_title": "World History, since 1945",
+      "title": "Historia powszechna po 1945 roku",
+      "institution": "Wydział Historii Uniwersytetu Warszawskiego"
+    },
+    {
+      "original_title": "History of the Cultural Cold War",
+      "title": "Historia zimnej wojny w kulturze",
+      "institution": "Wydział Historii Uniwersytetu Warszawskiego"
+    },
+    {
+      "original_title": "Introduction to Academic Writing",
+      "title": "Wprowadzenie do pisania akademickiego",
+      "institution": "Wydział Historii Uniwersytetu Warszawskiego"
+    },
+    {
+      "original_title": "Ukraine on the World Stage: History, Culture, Geopolitics",
+      "title": "Ukraina na arenie międzynarodowej: historia, kultura, geopolityka",
+      "level": "Seminarium",
+      "institution": "Ukraiński Wolny Uniwersytet w Monachium"
+    }
+  ]
+}
