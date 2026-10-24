@@ -22,7 +22,7 @@
     'Podcasts & public history':'Podcasty i popularyzacja historii',
     'Essays & commentary':'Eseje i komentarze', 'Policy analysis':'Analizy eksperckie',
     'Research profile':'Profil badawczy', 'Current research':'Obecne badania',
-    'Featured book':'Wyróżniona książka','Selected work':'Wybrane publikacje',
+    'Featured book':'Nowa książka','Selected work':'Wybrane publikacje',
     'Explore research':'Poznaj badania','View publications':'Zobacz wszystkie publikacje',
     'Read more →':'Czytaj więcej →','About':'O mnie',
     'Related:':'Powiązane zagadnienia:','Publisher':'Wydawca','Published':'Opublikowana','Forthcoming':'W przygotowaniu',
@@ -57,21 +57,117 @@
     'Research update':'Wiadomość o badaniach','Media appearance':'W mediach',
     'No matches. Try another keyword or a shorter phrase.':'Brak wyników. Spróbuj innego lub krótszego zapytania.',
     'Close search':'Zamknij wyszukiwarkę',
-    'Search this website':'Szukaj na stronie'
+    'Search this website':'Szukaj na stronie',
+    'Try “Fulbright”, “Ukraine”, “Brzezinski”, or “Cold War”.':'Spróbuj wpisać „Fulbright”, „Ukraina”, „Brzeziński” lub „zimna wojna”.',
+    'Search data is unavailable. Try refreshing the page.':'Nie można wczytać danych wyszukiwarki. Odśwież stronę.',
+    'Loading current site content…':'Wczytywanie treści strony…',
+    'No updates published yet.':'Nie opublikowano jeszcze aktualności.',
+    'News could not be loaded. Please try again later.':'Nie udało się wczytać aktualności. Spróbuj ponownie później.'
   };
   const tr = value => pl ? (mappings[value] || value) : value;
+  // Polish corrections are deliberately exact matches: edited CMS copy is never overwritten.
+  const polishCopyFixes = {
+    'Wyróżniona książka':'Nowa książka',
+    'Krótki wybór prac; pełna bibliografia znajduje się w zakładce Publikacje.':'Wybrane prace. Pełny wykaz znajduje się w zakładce Publikacje.',
+    'Moje obecne badania obejmują cztery powiązane ze sobą obszary.':'Moje badania obejmują cztery powiązane obszary historii zimnej wojny.',
+    'wyrachowaną otwartością władz PRL':'pragmatyczną otwartością władz PRL',
+    'historią nowoczesnej Europy Środkowo-Wschodniej':'historią Europy Środkowo-Wschodniej w XX wieku',
+    'Stażysta podoktorski':'Badacz podoktorski',
+    'Historia zimnej wojny w kulturze':'Historia kulturowej zimnej wojny'
+  };
+  function correctPolishCopy(value) {
+    if (typeof value === 'string') {
+      let t=value;
+      for (const [original,revised] of Object.entries(polishCopyFixes)) {
+        if(t===original) return revised;
+        if (original==='wyrachowaną otwartością władz PRL' && t.includes(original))
+          t=t.replace(original,revised);
+      }
+      // Time-aware correction to a sentence written before the English book's November 2026 release.
+      if (t.includes('opublikowana po polsku w 2024 r., a po angielsku przez Manchester University Press w 2026 r.')) {
+        t=t.replace('opublikowana po polsku w 2024 r., a po angielsku przez Manchester University Press w 2026 r.',
+                    'opublikowana po polsku w 2024 r., ukaże się po angielsku nakładem Manchester University Press w listopadzie 2026 r.');
+      }
+      return t;
+    }
+    if (Array.isArray(value)) return value.map(correctPolishCopy);
+    if (value && typeof value==='object') return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,correctPolishCopy(v)]));
+    return value;
+  }
+  function periodKey(value) {
+    return String(value||'').trim().toLowerCase().replace(/obecnie|present/g,'present').replace(/\s+/g,'');
+  }
+  function polishPeriod(value) { return String(value||'').replace(/\bpresent\b/gi,'obecnie'); }
+  const monthNames = {january:'styczeń',february:'luty',march:'marzec',april:'kwiecień',may:'maj',june:'czerwiec',july:'lipiec',august:'sierpień',september:'wrzesień',october:'październik',november:'listopad',december:'grudzień'};
+  function polishUpdateDate(value) {
+    return String(value||'').replace(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/gi,
+      m=>monthNames[m.toLowerCase()]||m);
+  }
+  function mergeCV(source, trans, result) {
+    // The EN lists determine both membership and order. New entries show up automatically.
+    const oldPositions=new Map([
+      ['Assistant Professor','Adiunkt'],['Postdoctoral Fellow','Badacz podoktorski']
+    ]);
+    const oldInstitutions=new Map([
+      ['Faculty of History, University of Warsaw','Wydział Historii Uniwersytetu Warszawskiego'],
+      ['John Paul II Catholic University of Lublin','Katolicki Uniwersytet Lubelski Jana Pawła II']
+    ]);
+    const localizedAppointments=trans.appointments||[];
+    result.appointments=(source.appointments||[]).map(x=>{
+      const key=periodKey(x.period);
+      const sourceMatches=(source.appointments||[]).filter(a=>periodKey(a.period)===key);
+      const translations=localizedAppointments.filter(a=>periodKey(a.period)===key);
+      const match=sourceMatches.length===1 && translations.length===1 ? translations[0]:null;
+      return {...x,
+        position:match?.position || oldPositions.get(x.position) || x.position,
+        institution:match?.institution || oldInstitutions.get(x.institution) || x.institution,
+        period:polishPeriod(x.period)};
+    });
+    const degrees=new Map([
+      ['Ph.D., History','Doktor nauk humanistycznych w dyscyplinie historia'],
+      ['M.A., History','Magister historii'],
+      ['B.A., History','Licencjat z historii']
+    ]);
+    const universities=new Map([
+      ['University of Warsaw','Uniwersytet Warszawski'],
+      ['National University Kyiv-Mohyla Academy','Narodowy Uniwersytet „Akademia Kijowsko-Mohylańska”']
+    ]);
+    const localizedEducation=trans.education||[];
+    result.education=(source.education||[]).map(x=>{
+      const key=String(x.year||'');
+      const sourceMatches=(source.education||[]).filter(a=>String(a.year||'')===key);
+      const translations=localizedEducation.filter(a=>String(a.year||'')===key);
+      const match=sourceMatches.length===1 && translations.length===1 ? translations[0]:null;
+      return {...x,degree:match?.degree || degrees.get(x.degree) || x.degree,
+        institution:match?.institution || universities.get(x.institution) || x.institution};
+    });
+    // Match research-area translations by the exact original EN label, not the list position.
+    const areaKeys=[
+      'Intellectual history of East-Central Europe',
+      'Polish-Ukrainian relations',
+      'Cold War cultural diplomacy and academic exchange',
+      'Soviet Ukraine and its relations with the West and the Kremlin',
+      'Émigré knowledge production',
+      'Memory politics and Russian imperialism'
+    ];
+    const areaTranslations=new Map(areaKeys.map((name,i)=>[name,(trans.research_areas||[])[i]]));
+    result.research_areas=(source.research_areas||[]).map(x=>areaTranslations.get(x)||x);
+    result.last_updated=polishUpdateDate(source.last_updated||trans.last_updated||'');
+    return result;
+  }
   function merge(name, source, trans) {
     if (!pl || !trans || typeof trans !== 'object') return source;
     const result = {...source};
     for (const [k,v] of Object.entries(trans)) {
-      if (k === 'items' || k === 'courses') continue;
+      if (k === 'items' || k === 'courses' || (name==='cv' && ['appointments','education','research_areas','last_updated'].includes(k))) continue;
       if (v !== undefined && v !== null) result[k] = v;
     }
+    if (name === 'cv') return correctPolishCopy(mergeCV(source,trans,result));
     if (name === 'news' && Array.isArray(trans.items)) {
       const index = new Map(trans.items.filter(x=>x.source_title).map(x=>[x.source_title,x]));
       result.items=(source.items||[]).map(x=>({ ...x, ...(index.get(x.title)||{}) }));
       result.items.push(...trans.items.filter(x=>!x.source_title && x.title));
-      return result;
+      return correctPolishCopy(result);
     }
     const key = name === 'books' || name === 'research' ? 'id' : 'source_title';
     for (const field of ['items','courses']) {
@@ -88,7 +184,10 @@
         return out;
       });
     }
-    return result;
+    if (name==='teaching' && Array.isArray(result.courses)) {
+      result.courses=result.courses.map(x=>({...x,period:polishPeriod(x.period)}));
+    }
+    return correctPolishCopy(result);
   }
   async function localizeData(name, source) {
     if (!pl) return source;
@@ -171,17 +270,42 @@
     const button=document.getElementById('cv-download');
     if(button && tr(button.textContent)!==button.textContent)button.textContent=tr(button.textContent);
     document.querySelectorAll('.home-feature-copy .publication-links a, .research-compact-item a').forEach(e=>{
-      const v=e.textContent.trim();if(tr(v)!==v)e.textContent=tr(v);
+      const v=e.textContent.trim();
+      const translated=e.closest('.home-feature-copy') && (v==='About'||v==='About the book') ? 'O książce' : tr(v);
+      if(translated!==v)e.textContent=translated;
     });
     const src=document.querySelector('#contact-position');
     if(src && src.textContent==='Assistant Professor of History')src.textContent='Adiunkt na Wydziale Historii';
-    // Institutional address stays unchanged, including official street name and postal code.
+    // Localize the university name in the street address, preserving the street and postal code.
+    document.querySelectorAll('#contact-details dt').forEach(label=>{
+      if(label.textContent.trim()!=='Adres')return;
+      const entry=label.nextElementSibling;
+      if(!entry)return;
+      for (const node of entry.childNodes){
+        if(node.nodeType===3 && node.textContent.includes('Faculty of History, University of Warsaw')){
+          node.textContent=node.textContent.replace('Faculty of History, University of Warsaw','Wydział Historii Uniwersytetu Warszawskiego');
+        }
+      }
+    });
   }
   let pending=false;
+  let newsDeepLinkDone=false;
+  function applyNewsDeepLink(){
+    if (newsDeepLinkDone || document.body.dataset.page!=='news')return;
+    const term=new URLSearchParams(location.search).get('search');
+    if(!term){newsDeepLinkDone=true;return}
+    const input=document.getElementById('news-filter');
+    const list=document.getElementById('news-list');
+    // Wait for the News module to load and attach its filter event listener.
+    if(!input || !list || !list.querySelector('.news-entry,.news-empty'))return;
+    newsDeepLinkDone=true;
+    input.value=term;
+    input.dispatchEvent(new Event('input',{bubbles:true}));
+  }
   function refresh(){
     if (pending) return;
     pending=true;
-    requestAnimationFrame(()=>{pending=false;addSwitcher();applyTranslations();});
+    requestAnimationFrame(()=>{pending=false;addSwitcher();applyTranslations();applyNewsDeepLink();});
   }
   function init(){
     refresh();

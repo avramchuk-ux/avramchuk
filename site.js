@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded',render);
 (() => {
   'use strict';
 
-  const FILES = ['site', 'books', 'research', 'publications', 'teaching', 'talks', 'about', 'cv'];
+  const FILES = ['site', 'books', 'research', 'publications', 'teaching', 'talks', 'about', 'cv', 'news'];
   const MAX_RESULTS = 40;
   const normalize = value => String(value ?? '')
     .normalize('NFD')
@@ -230,6 +230,7 @@ document.addEventListener('DOMContentLoaded',render);
     if (o.title) records.push(o);
   }
 
+  const searchLang=value=>window.AvramchukI18n?.tr(value)||value;
   function addData(data, key) {
     if (!data || typeof data !== 'object') return;
     if (key === 'site') {
@@ -256,6 +257,10 @@ document.addEventListener('DOMContentLoaded',render);
     if (key === 'talks') {
       (data.items || []).forEach(x => record('Talks & Media', x.title, textOf(x.venue, x.date),
         x.description, linkWithSearch('talks.html', x.title), x.type));
+    }
+    if (key === 'news') {
+      (data.items||[]).forEach(x=>record('News',x.title, textOf(x.date,x.category),x.description,
+        linkWithSearch('news.html',x.title),x.link_label));
     }
     if (key === 'about') {
       record('About', 'Biography', '', textOf(data.page_intro, data.paragraphs, data.short_bio), 'about.html');
@@ -326,31 +331,35 @@ document.addEventListener('DOMContentLoaded',render);
     const q = field.value.trim();
     listing.replaceChildren();
     if (!q) {
-      status.textContent = 'Search books, publications, research, teaching, and talks.';
-      const hint = make('p', 'gs-hint', 'Try “Fulbright”, “Ukraine”, “Brzezinski”, or “Cold War”.');
+      status.textContent = searchLang('Search books, publications, research, teaching, and talks.');
+      const hint = make('p', 'gs-hint', searchLang('Try “Fulbright”, “Ukraine”, “Brzezinski”, or “Cold War”.'));
       listing.append(hint);
       return;
     }
     if (!records.length) {
-      status.textContent = 'Search data is unavailable. Try refreshing the page.';
+      status.textContent = searchLang('Search data is unavailable. Try refreshing the page.');
       return;
     }
     const hits = matches(q);
-    status.textContent = `${hits.length} result${hits.length === 1 ? '' : 's'} for “${q}”`;
+    status.textContent = window.AvramchukI18n?.pl
+      ? `${hits.length} ${hits.length===1?'wynik':hits.length%10>=2&&hits.length%10<=4&&(hits.length%100<12||hits.length%100>14)?'wyniki':'wyników'} dla „${q}”`
+      : `${hits.length} result${hits.length === 1 ? '' : 's'} for “${q}”`;
     if (!hits.length) {
-      listing.append(make('p', 'gs-empty', 'No matches. Try another keyword or a shorter phrase.'));
+      listing.append(make('p', 'gs-empty', searchLang('No matches. Try another keyword or a shorter phrase.')));
       return;
     }
     hits.slice(0, MAX_RESULTS).forEach(({r}) => {
       const anchor = make('a', 'gs-result');
       anchor.href = r.url;
-      anchor.append(make('span', 'gs-section', r.section));
+      anchor.append(make('span', 'gs-section', searchLang(r.section)));
       anchor.append(make('strong', 'gs-title', r.title));
       const snippet = summary(r, q);
       if (snippet) anchor.append(make('span', 'gs-excerpt', snippet));
       listing.append(anchor);
     });
-    if (hits.length > MAX_RESULTS) listing.append(make('p', 'gs-hint', `Showing first ${MAX_RESULTS} results. Refine your search for more specific matches.`));
+    if (hits.length > MAX_RESULTS) listing.append(make('p', 'gs-hint', window.AvramchukI18n?.pl
+      ? `Wyświetlono pierwsze ${MAX_RESULTS} wyników. Doprecyzuj zapytanie, aby zawęzić wyszukiwanie.`
+      : `Showing first ${MAX_RESULTS} results. Refine your search for more specific matches.`));
   }
 
   function openSearch() {
@@ -360,7 +369,7 @@ document.addEventListener('DOMContentLoaded',render);
     document.body.classList.add('gs-modal-open');
     field.value = '';
     field.focus();
-    status.textContent = 'Loading current site content…';
+    status.textContent = searchLang('Loading current site content…');
     listing.replaceChildren();
     displaying = true;
     loadIndex().then(() => { if (displaying) renderResults(); });
